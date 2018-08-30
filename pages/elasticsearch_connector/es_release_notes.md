@@ -20,7 +20,7 @@ Notes. Review the connector operations and see how they work by
 reviewing the Technical Reference alongside the Demo Applications.
 
 [Elasticsearch Connector User
-Guide](elasticsearch-connector-user-manual.adoc)
+Guide](es_user_guide.html)
 
 Elasticsearch connector v1.0.0 - August 22, 2018
 ================================================

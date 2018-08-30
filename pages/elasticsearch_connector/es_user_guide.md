@@ -37,7 +37,7 @@ Software Requirements
 =====================
 
 For software requirements, visit the [Connector Release
-Notes](release-notes.adoc).
+Notes](es_release_notes.html).
 
 How to Install
 ==============
@@ -609,8 +609,8 @@ Resources
 =========
 
 -   [Elasticsearch Connector Release
-    Notes](Elasticsearch-connector-release-notes.adoc).
+    Notes](es_release_notes.html).
 
--   [Elasticsearch API docs](Elasticsearch-apidoc.html).
+-   [Elasticsearch API docs](es_api_reference.html).
 
 {% include links.html %}
