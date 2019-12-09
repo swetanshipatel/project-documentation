@@ -1,0 +1,41 @@
+# This is your sidebar TOC. The sidebar code loops through sections here and provides the appropriate formatting.
+
+entries:
+- title: Bigquery Connector
+  product: Bigquery Connector
+  version: 1.0
+  folders:
+
+  - title:
+    output: pdf
+    type: frontmatter
+    folderitems:
+    - title:
+      url: /titlepage.html
+      output: pdf
+      type: frontmatter
+    - title:
+      url: /tocpage.html
+      output: pdf
+      type: frontmatter
+
+  - title: Helpful links
+    output: web
+    folderitems:
+    - title: Home
+      url: /bq_landing_page.html
+      output: web
+
+    - title: Connector Guide
+      url: /bq_user_guide.html
+      output: web
+
+    - title: Connector Release Notes
+      url: /bq_release_notes.html
+      output: web
+
+    - title: Connector API Reference
+      url: /bq_api_reference.html
+      output: web
+
+

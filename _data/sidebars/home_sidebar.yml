@@ -14,3 +14,6 @@ entries:
     - title: Mulesoft Elasticsearch Connector
       url: /es_landing_page.html
       output: web
+    - title: Mulesoft Bigquery Connector
+      url: /bq_landing_page.html
+      output: web
