@@ -12,7 +12,7 @@ calls as per configuration.
 Read through this user guide to understand how to set up and configure a
 basic flow using the connector. Review the connector operations and see
 how they work by reviewing the Technical Reference alongside the Demo
-Applications. [BigQuery Connector User Guide](user-manual.adoc)
+Applications. [BigQuery Connector User Guide](bq_user_guide.html)
 
 ### BigQuery Connector v1.0.0 - \<DATE-TBD\> {#_bigquery_connector_v1_0_0_date_tbd}
 
