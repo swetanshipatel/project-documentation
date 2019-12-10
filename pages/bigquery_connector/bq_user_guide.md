@@ -472,8 +472,8 @@ deletes dataset and table once extract job complete execution.
 -   Once application is deployed, use **HTTP Listener’s Path** to
     execute the Mule Flow.
 
-![Documentstore-flow1](./images/mulesoft/bigquery-connector/Usecase1InsertAllExtractJob.png)
-![Documentstore-flow2](./images/mulesoft/bigquery-connector/Usecase1InsertAllExtractJob2.png)
+![Documentstore-flow1](./images/mulesoft/bigquery-connector/Usecase-1-InsertAllExtractJob.png)
+![Documentstore-flow2](./images/mulesoft/bigquery-connector/Usecase-1-InsertAllExtractJob-2.png)
 
 **Example Use Case Code :**
 
@@ -822,7 +822,7 @@ records once load job complete execution.
 -   Once application is deployed, use **HTTP Listener’s Path** to
     execute the Mule Flow.
 
-![search-flow](./images/mulesoft/bigquery-connector/Usecase2LoadJob.png)
+![search-flow](./images/mulesoft/bigquery-connector/Usecase-2-LoadJob.png)
 
 **Example Use Case Code :**
 
@@ -1305,8 +1305,8 @@ DONE, get the query result. Atlast, it deletes dataset and table.
 -   Once application is deployed, use **HTTP Listener’s Path** to
     execute the Mule Flow.
 
-![Documentstore-flow3](./images/mulesoft/bigquery-connector/Usecase3_InsertAndAsyncQueryData1.png)
-![Documentstore-flow4](./images/mulesoft/bigquery-connector/Usecase3_InsertAndAsyncQueryData2.png)
+![Documentstore-flow3](./images/mulesoft/bigquery-connector/Usecase-3-InsertAndAsyncQueryData-1.png)
+![Documentstore-flow4](./images/mulesoft/bigquery-connector/Usecase-3-InsertAndAsyncQueryData-2.png)
 
 **Example Use Case Code :**
 
