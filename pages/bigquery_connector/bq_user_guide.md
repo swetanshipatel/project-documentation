@@ -8,29 +8,7 @@ folder: bigquery_connector
 Google BigQuery Connector
 =========================
 
-![Google BigQuery](./images/mulesoft/bigquery-connector/google-bigquery-logo.png)
-
-Table of Contents
-
--   [Overview](#overview)
--   [Introduction](#introduction)
--   [Software Requirements](#requirements)
--   [Installation](#installation)
-    -   [Connector Namespace and Schema](#ns-schema)
-    -   [Maven Dependency Information](#maven)
--   [Configuration](#configuration)
-    -   [Creating a New Project](#_creating_a_new_project)
-    -   [Configuring the BigQuery Global
-        Element](#_configuring_the_bigquery_global_element)
-    -   [Understanding the Google BigQuery Connector](#operations)
--   [Common Use Cases](#_common_use_cases)
-    -   [Insert Data to BigQuery Table and Extract it to Google Cloud
-        Storage](#use-case-1)
-    -   [Load Data to BigQuery Table from Google Cloud and Perform
-        Query](#use-case-2)
-    -   [Insert Data to BigQuery Table, Perform Asynchronous Query and
-        Get Query Result](#use-case-3)
--   [Resources](#_resources)
+![Google BigQuery](./images/mulesoft/bigquery_connector/google-bigquery-logo.png)
 
 Overview
 --------
@@ -128,21 +106,22 @@ this XML snippet in pom.xml file in the Mule project.
 Configuration
 -------------
 
-### Creating a New Project {#_creating_a_new_project}
+### Creating a New Project
 
 To use the BigQuery connector in a Mule application project:
 
 1.  In Anypoint Studio, click **File \> New \> Mule Project**\
-     ![Create New Project](./images/mulesoft/bigquery-connector/create-new-project.png)\
-     Select Mule project from the dialog box\
+     ![Create New Project](./images/mulesoft/bigquery_connector/create-new-project.png)
+	 <br>
+     Select Mule project from the dialog box.
 
 2.  Enter project name and specify Runtime, API Implementation and
     Project Location if needed. ![Create new project dialogue
-    box](./images/mulesoft/bigquery-connector/ProjectName.png)
+    box](./images/mulesoft/bigquery_connector/ProjectName.png)
 
 3.  Click **Finish** to create the project
 
-### Configuring the BigQuery Global Element {#_configuring_the_bigquery_global_element}
+### Configuring the BigQuery Global Element
 
 Place the connector in the Mule flow as per the use case. To use the
 BigQuery connector in the Mule application, user must configure a global
@@ -150,32 +129,33 @@ BigQuery element that is used by the Google Bigquery connector to
 authenticate. The BigQuery connector provides the following global
 configuration.
 
-![Bigquery-connector-config](./images/mulesoft/bigquery-connector/ConnectorConfiguration.png)
+![Bigquery-connector-config](./images/mulesoft/bigquery_connector/ConnectorConfiguration.png)
 
-#### Authentication
+### Authentication
 
 To access BigQuery instance user needs to configure service account key
 as mentioned in below section.
 
-##### SERVICE ACCOUNT KEY\
- {#_service_account_key_br}
+#### SERVICE ACCOUNT KEY
 
 Service accounts can be used by applications to access Google APIs
 programmatically via OAuth 2.0. A service account uses an OAuth 2.0 flow
 that does not require human authorization. Instead, it uses a key file
 that only your application can access.\
  For Creating and managing service account keys, refer [Google
-Cloud](%0Ahttps://cloud.google.com/iam/docs/creating-managing-service-account-keys).
+Cloud](https://cloud.google.com/iam/docs/creating-managing-service-account-keys).
 
 Following parameters are required for **SERVICE ACCOUNT KEY**
 configuration:
 
-  Field                                 Description
-  ------------------------------------- ----------------------------------------------------------------------------------------------------------
-  **Project ID**                        Project ID of Google Cloud Platform’s project (If any) or create a new project on Google Cloud Platform.
-  **Service Account Key (JSON) File**   Associated with Google Cloud Platform’s Project , Download the file and provide path of it.
+<table border="1">
 
-![Bigquery-global-config](./images/mulesoft/bigquery-connector/ProjectConfiguration.png)
+<tr><th>Field</th><th>Description</th></tr>
+<tr><td>Project ID</td><td>Project ID of Google Cloud Platform’s project (If any) or create a new project on Google Cloud Platform.</td></tr>
+<tr><td>Service Account Key (JSON) File</td><td>Associated with Google Cloud Platform’s Project , Download the file and provide path of it.</td></tr>
+</table>
+
+![Bigquery-global-config](./images/mulesoft/bigquery_connector/ProjectConfiguration.png)
 
 ### Understanding the Google BigQuery Connector {#operations}
 
@@ -228,7 +208,7 @@ Mule.
     JavaDocs](https://googleapis.dev/java/google-cloud-clients/latest/com/google/cloud/bigquery/package-summary.html)
     for more information about complex input or return types.
 
-Common Use Cases {#_common_use_cases}
+Common Use Cases
 ----------------
 
 -   [Insert Data to BigQuery Table and Extract it to Google Cloud
@@ -309,15 +289,19 @@ deletes dataset and table once extract job complete execution.
     ]
 
 -   We used following **Table Schema**:
+	
 
-  ---------------- ----------------
-  **Field name**   **Field type**
-  Name             String
-  EmployeeID       String
-  Age              Integer
-  ContactNumber    String
-  Designation      String
-  Salary           Float
+<table border="1">
+<tr><th>Field name</th><th>Field type</th></tr>
+<tr><td>Name</td><td>String</td></tr>
+<tr><td>EmployeeID</td><td>String</td></tr>
+<tr><td>Age</td><td>Integer</td></tr>
+<tr><td>ContactNumber</td><td>String</td></tr>
+<tr><td>Designation</td><td>String</td></tr>
+<tr><td>Salary</td><td>Float</td></tr>
+
+</table>
+
   ---------------- ----------------
 
 -   Add **Create Table** onto the canvas. Provide Dataset Name, Table
@@ -488,8 +472,8 @@ deletes dataset and table once extract job complete execution.
 -   Once application is deployed, use **HTTP Listener’s Path** to
     execute the Mule Flow.
 
-![Documentstore-flow](./images/mulesoft/bigquery-connector/Usecase1InsertAllExtractJob.png)
-![Documentstore-flow](./images/mulesoft/bigquery-connector/Usecase1InsertAllExtractJob2.png)
+![Documentstore-flow](./images/mulesoft/bigquery_connector/Usecase1InsertAllExtractJob.png)
+![Documentstore-flow](./images/mulesoft/bigquery_connector/Usecase1InsertAllExtractJob2.png)
 
 **Example Use Case Code :**
 
@@ -715,13 +699,15 @@ records once load job complete execution.
 -   Once **Load Job** is executed, below table schema is created at
     destination.
 
-  ------------------------ ----------------
-  **Field name**           **Field type**
-  Section\_Name            String
-  Menu\_Name               String
-  Channel\_ID              Integer
-  Editor\_\_User\_Name\_   String
-  ------------------------ ----------------
+<table border="1">
+<tr><th>Field name</th><th>Field type</th></tr>
+<tr><td>Section_Name</td><td>String</td></tr>
+<tr><td>Menu_Name</td><td>String</td></tr>
+<tr><td>Channel_ID</td><td>Integer</td></tr>
+<tr><td>Editor_User_Name_</td><td>String</td></tr>
+
+</table>
+
 
 -   Data is also loaded into destination table from source URI.
 
@@ -836,7 +822,7 @@ records once load job complete execution.
 -   Once application is deployed, use **HTTP Listener’s Path** to
     execute the Mule Flow.
 
-![search-flow](./images/mulesoft/bigquery-connector/Usecase2LoadJob.png)
+![search-flow](./images/mulesoft/bigquery_connector/Usecase2LoadJob.png)
 
 **Example Use Case Code :**
 
@@ -1036,19 +1022,26 @@ DONE, get the query result. Atlast, it deletes dataset and table.
 
 -   We used following **Table Schema**:
 
-  ------------------------------------------- ----------------
-  **Field name**                              **Field type**
-  Name                                        String
-  EmployeeID                                  String
-  ContactDetails                              Record
-  ContactDetails.Address                      Record
-  ContactDetails.Address.City                 String
-  ContactDetails.Address.State                String
-  ContactDetails.Address.Country              String
-  ContactDetails.ContactNumber                Record
-  ContactDetails.ContactNumber.CountryCode    String
-  ContactDetails.ContactNumber.MobileNumber   Integer
-  ------------------------------------------- ----------------
+---------------- ----------------
+
+
+<table border="1">
+<tr><th>Field name</th><th>Field type</th></tr>
+<tr><td>Name</td><td>String</td></tr>
+<tr><td>EmployeeID</td><td>String</td></tr>
+<tr><td>ContactDetails</td><td>Record</td></tr>
+<tr><td>ContactDetails.Address</td><td>Record</td></tr>
+<tr><td>ContactDetails.Address.City</td><td>String</td></tr>
+<tr><td>ContactDetails.Address.State</td><td>String</td></tr>
+<tr><td>ContactDetails.Address.Country</td><td>String</td></tr>
+<tr><td>ContactDetails.ContactNumber</td><td>Record</td></tr>
+<tr><td>ContactDetails.ContactNumber.CountryCode</td><td>String</td></tr>
+<tr><td>ContactDetails.ContactNumber.MobileNumber</td><td>Integer</td></tr>
+
+</table>
+
+  ---------------- ----------------
+
 
 -   Add **Create Table** onto the canvas. Provide Dataset Name, Table
     Name and map payload to the **Table Fields** using below Data Weave
@@ -1312,8 +1305,8 @@ DONE, get the query result. Atlast, it deletes dataset and table.
 -   Once application is deployed, use **HTTP Listener’s Path** to
     execute the Mule Flow.
 
-![Documentstore-flow](./images/mulesoft/bigquery-connector/Usecase3_InsertAndAsyncQueryData1.png)
-![Documentstore-flow](./images/mulesoft/bigquery-connector/Usecase3_InsertAndAsyncQueryData2.png)
+![Documentstore-flow](./images/mulesoft/bigquery_connector/Usecase3_InsertAndAsyncQueryData1.png)
+![Documentstore-flow](./images/mulesoft/bigquery_connector/Usecase3_InsertAndAsyncQueryData2.png)
 
 **Example Use Case Code :**
 
@@ -1600,7 +1593,7 @@ described above.
         </sub-flow>
     </mule>
 
-Resources {#_resources}
+Resources
 ---------
 
 -   [BiqQuery Connector Release
