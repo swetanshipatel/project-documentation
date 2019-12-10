@@ -8,7 +8,7 @@ folder: bigquery_connector
 Google BigQuery Connector
 =========================
 
-![Google BigQuery](./images/mulesoft/bigquery_connector/google-bigquery-logo.png)
+![Google BigQuery](./images/mulesoft/bigquery-connector/google-bigquery-logo.png)
 
 Overview
 --------
@@ -111,13 +111,13 @@ Configuration
 To use the BigQuery connector in a Mule application project:
 
 1.  In Anypoint Studio, click **File \> New \> Mule Project**\
-     ![Create New Project](./images/mulesoft/bigquery_connector/create-new-project.png)
+     ![Create New Project](./images/mulesoft/bigquery-connector/create-new-project.png)
 	 <br>
      Select Mule project from the dialog box.
 
 2.  Enter project name and specify Runtime, API Implementation and
     Project Location if needed. ![Create new project dialogue
-    box](./images/mulesoft/bigquery_connector/ProjectName.png)
+    box](./images/mulesoft/bigquery-connector/ProjectName.png)
 
 3.  Click **Finish** to create the project
 
@@ -129,7 +129,7 @@ BigQuery element that is used by the Google Bigquery connector to
 authenticate. The BigQuery connector provides the following global
 configuration.
 
-![Bigquery-connector-config](./images/mulesoft/bigquery_connector/ConnectorConfiguration.png)
+![Bigquery-connector-config](./images/mulesoft/bigquery-connector/ConnectorConfiguration.png)
 
 ### Authentication
 
@@ -155,7 +155,7 @@ configuration:
 <tr><td>Service Account Key (JSON) File</td><td>Associated with Google Cloud Platform’s Project , Download the file and provide path of it.</td></tr>
 </table>
 
-![Bigquery-global-config](./images/mulesoft/bigquery_connector/ProjectConfiguration.png)
+![Bigquery-global-config](./images/mulesoft/bigquery-connector/ProjectConfiguration.png)
 
 ### Understanding the Google BigQuery Connector {#operations}
 
@@ -472,8 +472,8 @@ deletes dataset and table once extract job complete execution.
 -   Once application is deployed, use **HTTP Listener’s Path** to
     execute the Mule Flow.
 
-![Documentstore-flow](./images/mulesoft/bigquery_connector/Usecase1InsertAllExtractJob.png)
-![Documentstore-flow](./images/mulesoft/bigquery_connector/Usecase1InsertAllExtractJob2.png)
+![Documentstore-flow1](./images/mulesoft/bigquery-connector/Usecase1InsertAllExtractJob.png)
+![Documentstore-flow2](./images/mulesoft/bigquery-connector/Usecase1InsertAllExtractJob2.png)
 
 **Example Use Case Code :**
 
@@ -822,7 +822,7 @@ records once load job complete execution.
 -   Once application is deployed, use **HTTP Listener’s Path** to
     execute the Mule Flow.
 
-![search-flow](./images/mulesoft/bigquery_connector/Usecase2LoadJob.png)
+![search-flow](./images/mulesoft/bigquery-connector/Usecase2LoadJob.png)
 
 **Example Use Case Code :**
 
@@ -1305,8 +1305,8 @@ DONE, get the query result. Atlast, it deletes dataset and table.
 -   Once application is deployed, use **HTTP Listener’s Path** to
     execute the Mule Flow.
 
-![Documentstore-flow](./images/mulesoft/bigquery_connector/Usecase3_InsertAndAsyncQueryData1.png)
-![Documentstore-flow](./images/mulesoft/bigquery_connector/Usecase3_InsertAndAsyncQueryData2.png)
+![Documentstore-flow3](./images/mulesoft/bigquery-connector/Usecase3_InsertAndAsyncQueryData1.png)
+![Documentstore-flow4](./images/mulesoft/bigquery-connector/Usecase3_InsertAndAsyncQueryData2.png)
 
 **Example Use Case Code :**
 
