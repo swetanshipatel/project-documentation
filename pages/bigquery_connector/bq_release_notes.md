@@ -21,15 +21,15 @@ basic flow using the connector. Review the connector operations and see
 how they work by reviewing the Technical Reference alongside the Demo
 Applications. [BigQuery Connector User Guide](bq_user_guide.html)
 
-### BigQuery Connector v1.0.0 - \<DATE-TBD\> {#_bigquery_connector_v1_0_0_date_tbd}
+### BigQuery Connector v1.0.0
 
-### Version V1.0 Compatibility {#_version_v1_0_compatibility}
+### Version V1.0 Compatibility
+<table border="1">
+<tr><th>Software</th><th>Version</th></tr>
+<tr><td>Mule Runtime</td><td>4.2.1</td></tr>
+</table>
 
-  Software       Version
-  -------------- ---------
-  Mule Runtime   4.2.1
-
-### Features {#_features}
+### Features
 
 1.  Authentication using Service Account Key
 
@@ -79,7 +79,7 @@ Applications. [BigQuery Connector User Guide](bq_user_guide.html)
 
     -   Update Table
 
-### Support Resources {#_support_resources}
+### Support Resources
 
 -   Learn how to [Install Anypoint
     Connectors](https://docs.mulesoft.com/anypoint-studio/v/7.1/add-modules-in-studio-to).
