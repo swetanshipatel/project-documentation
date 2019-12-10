@@ -1,3 +1,10 @@
+---
+title: Bigquery Connector User Guide
+toc: true
+sidebar: bigquery_connector_sidebar
+permalink: bq_user_guide.html
+folder: bigquery_connector
+---
 Google BigQuery Connector
 =========================
 
@@ -38,7 +45,7 @@ guide to understand how to set up and configure a basic flow using the
 connector.
 
 Track features and API version updates using the Google BigQuery
-[Connector Release Notes](bigquery-connector-release-notes.adoc). Review
+[Connector Release Notes](bq_release_notes.html). Review
 the connector operations and see how they work by reviewing the
 technical reference alongside the demo applications
 
@@ -1601,4 +1608,4 @@ Resources {#_resources}
 
 -   [BiqQuery API docs](bq_api_reference.html).
 
-
+{% include links.html %}

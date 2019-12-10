@@ -1,3 +1,10 @@
+---
+title: Bigquery Connector API Reference 
+keywords: sample
+sidebar: bigquery_connector_sidebar
+permalink: bq_api_reference.html
+folder: bigquery_connector
+---
 Google BigQuery Connector Documentation Reference
 =================================================
 
@@ -2004,4 +2011,4 @@ for detail documentation.
   Allow Field Addition       Boolean                                      Allow adding a nullable field to the schema when schema of the destination table to be updated as a side effect of the load job                                                                         true            
   ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-
+{% include links.html %}
