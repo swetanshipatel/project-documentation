@@ -1,3 +1,10 @@
+---
+title: BigQuery Connector Release Notes
+keywords: sample
+sidebar: bigquery_connector_sidebar
+permalink: bq_release_notes.html
+folder: bigquery_connector
+---
 BigQuery Connector Release Notes
 ================================
 
@@ -86,4 +93,4 @@ Applications. [BigQuery Connector User Guide](bq_user_guide.html)
     ESB Enterprise and log in to MuleSoft’s [Customer
     Portal](http://www.mulesoft.com/support-login).
 
-
+{% include links.html %}
