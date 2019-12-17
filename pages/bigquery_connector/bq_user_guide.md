@@ -1,5 +1,5 @@
 ---
-title: Bigquery Connector User Guide
+title: Google BigQuery Connector User Guide
 toc: true
 sidebar: bigquery_connector_sidebar
 permalink: bq_user_guide.html
@@ -125,7 +125,7 @@ To use the BigQuery connector in a Mule application project:
 
 Place the connector in the Mule flow as per the use case. To use the
 BigQuery connector in the Mule application, user must configure a global
-BigQuery element that is used by the Google Bigquery connector to
+BigQuery element that is used by the Google BigQuery connector to
 authenticate. The BigQuery connector provides the following global
 configuration.
 
