@@ -1,5 +1,5 @@
 ---
-title: Bigquery Connector API Reference 
+title: Google BigQuery Connector API Reference 
 keywords: sample
 sidebar: bigquery_connector_sidebar
 permalink: bq_api_reference.html

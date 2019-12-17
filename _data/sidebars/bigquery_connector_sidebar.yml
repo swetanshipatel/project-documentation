@@ -1,8 +1,8 @@
 # This is your sidebar TOC. The sidebar code loops through sections here and provides the appropriate formatting.
 
 entries:
-- title: Bigquery Connector
-  product: Bigquery Connector
+- title: Google BigQuery Connector
+  product: Google BigQuery Connector
   version: 1.0
   folders:
 

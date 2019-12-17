@@ -1,11 +1,11 @@
 ---
-title: BigQuery Connector Release Notes
+title: Google BigQuery Connector Release Notes
 keywords: sample
 sidebar: bigquery_connector_sidebar
 permalink: bq_release_notes.html
 folder: bigquery_connector
 ---
-BigQuery Connector Release Notes
+Google BigQuery Connector Release Notes
 ================================
 
 The Google BigQuery connector allows you to access the Google BigQuery
@@ -21,7 +21,7 @@ basic flow using the connector. Review the connector operations and see
 how they work by reviewing the Technical Reference alongside the Demo
 Applications. [BigQuery Connector User Guide](bq_user_guide.html)
 
-### BigQuery Connector v1.0.0
+### Google BigQuery Connector v1.0.0
 
 ### Version V1.0 Compatibility
 <table border="1">
