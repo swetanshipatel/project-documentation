@@ -93,7 +93,7 @@ management, include this XML snippet in your `pom.xml` file.
 
                     <dependency>
                             <groupId>org.mule.extension.elasticsearch</groupId>
-                            <artifactId>elasticsearch-extension</artifactId>
+                            <artifactId>elasticsearch-connector</artifactId>
                             <version>1.0.0</version>
                             <classifier>mule-plugin</classifier>
                     </dependency>
