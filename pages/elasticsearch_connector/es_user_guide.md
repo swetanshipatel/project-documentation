@@ -290,8 +290,7 @@ Common Use Cases
 
 -   [Search for the phrases from particular dataset](#use-case-2)
 
--   [Different Elasticsearch operations that can be performed on
-    Documents](#use-case-3)
+-   [Different Elasticsearch operations that can be performed on Documents](#use-case-3)
 
 Elasticsearch stores JSON documents. This is an example of a simple
 document :
@@ -306,7 +305,7 @@ document :
             "text_entry": "To be commenced in strands afar remote"
     }
 
-Elasticsearch as a Document Store
+### 	  1.Elasticsearch as a Document Store {#use-case-1}
 ---------------------------------
 
 -   We will use the readily available dataset that can be found at [the
@@ -375,6 +374,9 @@ described above.
                     <logger level="INFO" doc:name="Log the get document details" doc:id="6c9112f9-4216-445a-bdb5-b64f6e6a469e" message="Document Generated #[payload]"/>
             </flow>
     </mule>
+
+
+### 	2.Search for the phrases from particular dataset {#use-case-2}
 
 -   To visually analyze the datasets, user can also use of
     [Kibana](<literal>https://www.elastic.co/guide/en/kibana/6.2/index.html</literal>)
@@ -539,6 +541,8 @@ described in the previous section.
 
                     </choice>
     </flow>
+
+###		3.Different Elasticsearch operations that can be performed on Documents {#use-case-3}
 
 -   We will use different operations to implement the usecase like :
 
