@@ -152,7 +152,7 @@ configuration:
 
 <tr><th>Field</th><th>Description</th></tr>
 <tr><td>Project ID</td><td>Project ID of Google Cloud Platform’s project (If any) or create a new project on Google Cloud Platform.</td></tr>
-<tr><td>Service Account Key (JSON) File</td><td>Associated with Google Cloud Platform’s Project , Download the file and provide path of it.</td></tr>
+<tr><td>Service Account Key (JSON) File</td><td>Associated with Google Cloud Platform’s Project. Download the file, place it in <b>BASE_LOCATION_OF_PROJECT/src/main/resources</b> folder and provide it's relative path.</td></tr>
 </table>
 
 ![Bigquery-global-config](./images/mulesoft/bigquery-connector/ProjectConfiguration.png)
@@ -402,7 +402,9 @@ deletes dataset and table once extract job complete execution.
 -   Now create a new sub flow `extractJobFlow`. Drag **Create Job** onto
     the canvas and select **Extract Job** as job config.
 
--   Provide **Destination URIs** , **Source Table and Dataset**.
+-   Provide **Destination URIs** (URI of Google Cloud Storage where you want to extract Google BigQuery's table data).
+
+-	Provide **Source Table and Dataset**
 
 -   **Note:** For **Extract Job** operation, **Only simple types may be
     exported as CSV.**
@@ -451,8 +453,8 @@ deletes dataset and table once extract job complete execution.
 
     vars.jobStatus == 'DONE'
 
--   To the expression side, add **Logger** to log **jobStatus** and add
-    **FLow Reference** to call another sub flow to delete the resources.
+-   To the expression/when side, add **Logger** to log **jobStatus** and add
+    **FLow Reference** to call another sub flow **deleteFlow** to delete the resources.
 
 -   To the default side of the **Choice**, again add the **Logger** to
     log **jobStatus** as expression `vars.jobStatus`.
@@ -765,7 +767,7 @@ records once load job complete execution.
 
     vars.jobStatus == 'DONE'
 
--   To the expression side, add **Query** to the canvas. This **Query**
+-   To the expression/when side, add **Query** to the canvas. This **Query**
     is synchronous operation. That’s why it returns the query result
     (Java object of com.mulesoft.connectors.bigquery.api.TableResult) as
     output.
@@ -1188,8 +1190,12 @@ DONE, get the query result. Atlast, it deletes dataset and table.
 
 -   **Example** -
     `SELECT * FROM <ProjectID.DatasetName.TableName> WHERE ContactDetails.Address.State in UNNEST (@param)`.
-    Here, @param is **Named Query Parameter** and while using query
-    parameter for array in the query string, please use **UNNEST** in
+    Here, @param is **Named Query Parameter**. 
+	
+-	To create **Named Query Parameter**, check Named Query Parameters and provide the key and value as expression.
+	Here, key is **param** and value is **Array of String**.
+	
+-	**Note** - While using query parameter for array in the query string, please use **UNNEST** in
     the query.
 
 -   This **Create Job → Query Job** returns Job details. Hence, save
@@ -1238,7 +1244,7 @@ DONE, get the query result. Atlast, it deletes dataset and table.
 
     vars.jobStatus == 'DONE'
 
--   To the expression side, add **Logger** to log **jobStatus** as
+-   To the expression/when side, add **Logger** to log **jobStatus** as
     expression `vars.jobStatus`.
 
 -   Add **Get Query Result** in the canvas to get the result of the
