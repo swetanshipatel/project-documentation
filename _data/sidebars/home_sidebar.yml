@@ -17,3 +17,6 @@ entries:
     - title: Mulesoft Google BigQuery Connector
       url: /bq_landing_page.html
       output: web
+    - title: Braintree Connector
+      url: /braintree_landing_page.html
+      output: web
