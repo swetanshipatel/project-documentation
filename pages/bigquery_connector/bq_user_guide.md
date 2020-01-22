@@ -35,9 +35,9 @@ BigQuery](https://cloud.google.com/bigquery/), [Anypoint
 Connectors](https://docs.mulesoft.com/connectors/), and [Anypoint
 Studio](https://www.mulesoft.com/platform/studio). To increase
 familiarity with Studio, consider completing a [Anypoint Studio
-Tutorial](https://docs.mulesoft.com/anypoint-studio/v/7.1/). This page
+Tutorial](https://docs.mulesoft.com/studio/5/). This page
 requires basic knowledge of [Mule Key
-Concepts](https://docs.mulesoft.com/mule4-user-guide/v/4.1/) and [Google
+Concepts](https://docs.mulesoft.com/mule-runtime/4.2/) and [Google
 BigQuery](https://cloud.google.com/bigquery/).
 
 Software Requirements {#requirements}
