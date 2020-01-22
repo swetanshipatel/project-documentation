@@ -18,10 +18,10 @@ from different providers. From single-touch payments to mobile SDKs and
 foreign currency acceptance, Braintree provide everything you need to
 start accepting payments today.
 
-Read through this user guide to understand how to set up and configure a
+Read through [Braintree Connector User Guide](braintree-user-manual.html) to understand how to set up and configure a
 basic flow using the connector. Review the connector operations and see
 how they work by reviewing the Technical Reference alongside the Demo
-Applications. [Braintree Connector User Guide](braintree-user-manual.html)
+Applications.
 
 ### Braintree Connector v1.0.0 {#braintree-connector-v1-0-0-date-tbd}
 
@@ -70,6 +70,8 @@ Applications. [Braintree Connector User Guide](braintree-user-manual.html)
     -   Transaction - Submit For Settlement
 
     -   Transaction - Void
+	
+	-   Transaction - Refund
 
 ### Support Resources {#support-resources}
 

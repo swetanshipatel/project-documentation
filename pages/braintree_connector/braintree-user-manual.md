@@ -147,7 +147,7 @@ credentials authentication.
 #### Authentication
 
 To access Braintree server, user needs to configure API credentials as
-mentioned in below section.
+mentioned below.
 
 API credentials are unique account identifiers that must be used to
 configure Braintree connector. For Creating and managing API Credentials, refer [Braintree Gateway
@@ -206,7 +206,7 @@ Mule.
     makes sure that DataWeave knows the data format and structure it
     must work with so you don’t have to figure it out manually. Mule
     developer can refer to [Braintree Connector API
-    docs](braintree-documentation.html) and [Braintree
+    docs](https://opendoc.gslab.com/braintree-api-doc.html) and [Braintree
     Documentation](https://developers.braintreepayments.com/start/overview)
     for more information about complex input or return types.
 
