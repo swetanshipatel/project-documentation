@@ -85,7 +85,7 @@ Applications. [BigQuery Connector User Guide](bq_user_guide.html)
     Connectors](https://docs.mulesoft.com/anypoint-studio/v/7.1/add-modules-in-studio-to).
 
 -   Access MuleSoft’ [MuleSoft Help
-    Center](https://help.mulesoft.com/s/) to support, training and pose
+    Center](https://help.mulesoft.com/s/) to support, training and post
     questions and get help from Mule’s broad community of users.
 
 -   To access MuleSoft’s expert support team,

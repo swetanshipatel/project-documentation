@@ -18,20 +18,22 @@ from different providers. From single-touch payments to mobile SDKs and
 foreign currency acceptance, Braintree provide everything you need to
 start accepting payments today.
 
-Read through this user guide to understand how to set up and configure a
+Read through [Braintree Connector User Guide](braintree-user-manual.html) to understand how to set up and configure a
 basic flow using the connector. Review the connector operations and see
 how they work by reviewing the Technical Reference alongside the Demo
-Applications. [Braintree Connector User Guide](user-manual.adoc)
+Applications.
 
-### Braintree Connector v1.0.0 - \<DATE-TBD\> {#_braintree_connector_v1_0_0_date_tbd}
+### Braintree Connector v1.0.0 {#braintree-connector-v1-0-0-date-tbd}
 
-### Version V1.0 Compatibility {#_version_v1_0_compatibility}
+### Version V1.0 Compatibility {#version-v1-0-compatibility}
 
-  Software       Version
-  -------------- ---------
-  Mule Runtime   4.2.1
+<table border="1">
+<tr><th>Software</th><th>Version</th></tr>
+<tr><td>Mule Runtime</td><td>4.2.1</td></tr>
+</table>
 
-### Features {#_features}
+
+### Features {#features}
 
 1.  Authentication using API credentials
 
@@ -68,14 +70,16 @@ Applications. [Braintree Connector User Guide](user-manual.adoc)
     -   Transaction - Submit For Settlement
 
     -   Transaction - Void
+	
+	-   Transaction - Refund
 
-### Support Resources {#_support_resources}
+### Support Resources {#support-resources}
 
 -   Learn how to [Install Anypoint
     Connectors](https://docs.mulesoft.com/anypoint-studio/v/7.1/add-modules-in-studio-to).
 
 -   Access MuleSoft’ [MuleSoft Help
-    Center](https://help.mulesoft.com/s/) to support, training and pose
+    Center](https://help.mulesoft.com/s/) to support, training and post
     questions and get help from Mule’s broad community of users.
 
 -   To access MuleSoft’s expert support team,

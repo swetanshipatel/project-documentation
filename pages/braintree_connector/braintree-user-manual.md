@@ -13,24 +13,24 @@ Braintree Connector
 Table of Contents
 
 -   [Overview](#overview)
--   [Important Concepts](#important-concepts)
+-   [Introduction](#introduction)
 -   [Software Requirements](#requirements)
--   [How to Install](#install)
--   [Connector Namespace and Schema](#ns-schema)
--   [Maven Dependency Information](#maven)
--   [How to Configure](#configure)
-    -   [Creating a New Project](#_creating_a_new_project)
+-   [Installation](#installation)
+    -   [Connector Namespace and Schema](#ns-schema)
+    -   [Maven Dependency Information](#maven)
+-   [Configuration](#configuration)
+    -   [Creating a New Project](#creating-a-new-project)
     -   [Configuring the Braintree Global
-        Element](#_configuring_the_braintree_global_element)
+        Element](#configuring-the-braintree-global-element)
     -   [Understanding the Braintree Connector](#operations)
--   [Common Use Cases](#_common_use_cases)
+-   [Common Use Cases](#common-use-cases)
     -   [Create a Customer with Payment Method and View
         Details](#use-case-1)
     -   [Undo a transaction](#use-case-2)
     -   [Submit transaction for settlement](#use-case-3)
--   [Resources](#_resources)
+-   [Resources](#resources)
 
-Overview
+Overview {#overview}
 --------
 
 Braintree is a full-stack payments platform that makes it easy to accept
@@ -47,11 +47,11 @@ It supports various operations of Customer, Payment Method, Transaction
 and Client Token.
 
 Track features and API version updates using the Braintree [Connector
-Release Notes](release-notes.adoc). Review the connector operations and
+Release Notes](braintree-release-notes.html). Review the connector operations and
 see how they work by reviewing the technical reference alongside the
 demo applications
 
-Important Concepts
+Introduction {#introduction}
 ------------------
 
 This document assumes that user is familiar with [Braintree
@@ -59,41 +59,39 @@ Payments](https://www.braintreepayments.com), [Anypoint
 Connectors](https://docs.mulesoft.com/connectors/), and [Anypoint
 Studio](https://www.mulesoft.com/platform/studio). To increase
 familiarity with Studio, consider completing a [Anypoint Studio
-Tutorial](https://docs.mulesoft.com/anypoint-studio/v/7.1/). This page
+Tutorial](https://docs.mulesoft.com/studio/5/). This page
 requires basic knowledge of [Mule Key
-Concepts](https://docs.mulesoft.com/mule4-user-guide/v/4.1/) and
+Concepts](https://docs.mulesoft.com/mule-runtime/4.2/) and
 [Braintree](https://www.braintreepayments.com/).
 
 Software Requirements {#requirements}
 ---------------------
 
 For software requirements, visit the [Connector Release
-Notes](connector-release-notes.adoc).
+Notes](braintree-release-notes.html).
 
-How to Install {#install}
+Installation {#installation}
 --------------
 
-User can install the connector in Anypoint Studio using the instructions
-in [Add Modules to Your
-Project](https://docs.mulesoft.com/anypoint-studio/v/7.1/add-modules-in-studio-to).
+To install the connector in Anypoint Studio use the instructions in
+[Add Modules to Your Project](https://docs.mulesoft.com/anypoint-studio/v/7.1/add-modules-in-studio-to).
 
 Additionally, we recommend to keep Studio up to date with its latest
 version.
 
-Connector Namespace and Schema {#ns-schema}
-------------------------------
+### Connector Namespace and Schema {#ns-schema}
 
 While designing Mule application in Anypoint Studio, when user drag the
 connector from the palette onto the Anypoint Studio canvas, studio
 automatically populates the XML code with the connector **namespace**
 and **schema location**.
 
-**Namespace:** `http://www.mulesoft.org/schema/mule/braintree`\
- **Schema Location:**
-`http://www.mulesoft.org/schema/mule/braintree/current/mule-braintree.xsd`
+**Namespace:** `http://www.mulesoft.org/schema/mule/braintree`
+
+**Schema Location:** `http://www.mulesoft.org/schema/mule/braintree/current/mule-braintree.xsd`
 
   ----- ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-  Tip   If you are manually coding the Mule application in Studio’s XML editor or another text editor, define the namespace and schema location in the header of your **Configuration XML**, inside the `<mule>` tag.
+  Tip :  If you are manually coding the Mule application in Studio’s XML editor or another text editor, define the namespace and schema location in the header of your **Configuration XML**, inside the `<mule>` tag.
   ----- ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ``` {.highlight}
@@ -102,16 +100,13 @@ and **schema location**.
     xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
 http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
 http://www.mulesoft.org/schema/mule/braintree http://www.mulesoft.org/schema/mule/braintree/current/mule-braintree.xsd">
-
-
 </mule>
 ```
 
 **Note:** Use `current` in the schema path. Studio interprets this to
 the current Mule version.
 
-Maven Dependency Information {#maven}
-----------------------------
+### Maven Dependency Information {#maven}
 
 After downloading and installing the connector, following steps make the
 Braintree connector available inside a Mule application for use and to
@@ -126,24 +121,23 @@ this XML snippet in pom.xml file in the Mule project.
                 <classifier>mule-plugin</classifier>
             </dependency>
 
-How to Configure {#configure}
+Configuration {#configuration}
 ----------------
 
-### Creating a New Project {#_creating_a_new_project}
+### Creating a New Project {#creating-a-new-project}
 
 To use the Braintree connector in a Mule application project:
 
-1.  In Anypoint Studio, click **File \> New \> Mule Project**\
-     ![Create New Project](./images/mulesoft/braintree-connector/create-new-project.png)\
-     Select Mule project from the dialog box\
+1.  In Anypoint Studio, click **File \> New \> Mule Project**
+     ![Create New Project](./images/mulesoft/braintree-connector/create-new-project.png)
+     Select Mule project from the dialog box.
 
-2.  Enter project name and leave the remaining options with their
-    default values ![Create new project dialogue
-    box](./images/mulesoft/braintree-connector/new-project-name.png)
+2.  Enter project name and specify Runtime, API Implementation and Project Location if needed.
+	![Create new project dialogue box](./images/mulesoft/braintree-connector/new-project-name.png)
 
 3.  Click **Finish** to create the project
 
-### Configuring the Braintree Global Element {#_configuring_the_braintree_global_element}
+### Configuring the Braintree Global Element {#configuring-the-braintree-global-element}
 
 To use the Braintree connector in the Mule application, user must
 configure a global Braintree element that is used by the Braintree
@@ -152,25 +146,22 @@ credentials authentication.
 
 #### Authentication
 
-To access Braintree server user needs to configure API credentials as
-mentioned in below section.
-
-##### API CREDENTIALS\
- {#_api_credentials_br}
+To access Braintree server, user needs to configure API credentials as
+mentioned below.
 
 API credentials are unique account identifiers that must be used to
-configure Braintree connector.\
- For Creating and managing API Credentials, refer [Braintree Gateway
-Credentials](%0Ahttps://articles.braintreepayments.com/control-panel/important-gateway-credentials).
+configure Braintree connector. For Creating and managing API Credentials, refer [Braintree Gateway
+Credentials](https://articles.braintreepayments.com/control-panel/important-gateway-credentials).
 
 Following parameters are required for **API CREDENTIALS** configuration:
+<table border="1">
 
-  Field             Description
-  ----------------- ---------------------------------------------------------------------------------------------------------------------------------------------
-  **Merchant ID**   Merchant ID is the unique identifier for your entire gateway account, including the multiple merchant accounts that may be in your gateway.
-  **Public key**    This is user-specific public identifier. Each user associated with your Braintree gateway will have their own public key.
-  **Private key**   This is user-specific private identifier. Each user associated with your Braintree gateway will have their own private key.
-  **Environment**   The environment specifies where requests via the API should be directed. e.g sandbox, production.
+<tr><th>Field</th><th>Description</th></tr>
+<tr><td>Merchant ID</td><td>Merchant ID is the unique identifier for your entire gateway account, including the multiple merchant accounts that may be in your gateway.</td></tr>
+<tr><td>Public key</td><td>This is user-specific public identifier. Each user associated with your Braintree gateway will have their own public key.</td></tr>
+<tr><td>Private key</td><td>This is user-specific private identifier. Each user associated with your Braintree gateway will have their own private key.</td></tr>
+<tr><td>Private key</td><td>The environment specifies where requests via the API should be directed. e.g sandbox, production.</td></tr>
+</table>
 
 ![braintree-global-config](./images/mulesoft/braintree-connector/braintree-global-config.png)
 
@@ -185,7 +176,7 @@ flow, configure a few connection details and begin application running
 on Braintree.
 
 Braintree Connector is used to connect to Braintree server. Braintree
-Connector is built using braintree-java Java API client provided by
+Connector is built using Braintree Java API client provided by
 Braintree. It executes operations exposed by Braintree using configured
 parameters.
 
@@ -215,11 +206,11 @@ Mule.
     makes sure that DataWeave knows the data format and structure it
     must work with so you don’t have to figure it out manually. Mule
     developer can refer to [Braintree Connector API
-    docs](braintree-documentation.html) and [Braintree
+    docs](https://opendoc.gslab.com/braintree-api-doc.html) and [Braintree
     Documentation](https://developers.braintreepayments.com/start/overview)
     for more information about complex input or return types.
 
-Common Use Cases {#_common_use_cases}
+Common Use Cases {#common-use-cases}
 ----------------
 
 -   [Create a Customer with Payment Method and View
@@ -686,11 +677,11 @@ experiment with the flow described above.
         </sub-flow>
     </mule>
 
-Resources {#_resources}
+Resources {#resources}
 ---------
 
--   [Braintree Connector Release Notes](release-notes.adoc).
+-   [Braintree Connector Release Notes](https://opendoc.gslab.com/braintree-release-notes.html).
 
--   [Braintree API docs](braintree-api-doc.adoc).
+-   [Braintree API docs](https://opendoc.gslab.com/braintree-api-doc.html).
 
 
