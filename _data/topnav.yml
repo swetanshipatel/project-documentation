@@ -18,6 +18,4 @@ topnav_dropdowns:
           url: /es_landing_page.html
         - title: Mulesoft Google BigQuery Connector
           url: /bq_landing_page.html
-        - title: Mulesoft Braintree Connector
-          url: /braintree_landing_page.html
    
