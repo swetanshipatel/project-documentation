@@ -23,7 +23,7 @@ applications.
 
 ### Google BigQuery Connector v1.0.0
 
-#### Version V1.0.0 Compatibility
+#### Version 1.0.0 Compatibility
 <table border="1">
 <tr><th>Software</th><th>Version</th></tr>
 <tr><td>Mule Runtime</td><td>4.2.1</td></tr>
