@@ -204,7 +204,7 @@ Mule.
     makes sure that DataWeave knows the data format and structure it
     must work with so you don’t have to figure it out manually. Mule
     developer can refer to [BiqQuery Connector API
-    docs](google-bigquery-documentation.html) and [Google BigQuery
+    docs](bq_api_reference.html) and [Google BigQuery
     JavaDocs](https://googleapis.dev/java/google-cloud-clients/latest/com/google/cloud/bigquery/package-summary.html)
     for more information about complex input or return types.
 
