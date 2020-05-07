@@ -63,9 +63,9 @@ connector from the palette onto the Anypoint Studio canvas, studio
 automatically populates the XML code with the connector **namespace**
 and **schema location**.
 
-**Namespace:** `http://www.mulesoft.org/schema/mule/bigquery`\
- **Schema Location:**
-`http://www.mulesoft.org/schema/mule/bigquery/current/mule-bigquery.xsd`
+**Namespace:** `http://www.mulesoft.org/schema/mule/bigquery`
+
+**Schema Location:** `http://www.mulesoft.org/schema/mule/bigquery/current/mule-bigquery.xsd`
 
   ----- ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
   Tip   If you are manually coding the Mule application in Studio’s XML editor or another text editor, define the namespace and schema location in the header of your **Configuration XML**, inside the `<mule>` tag.
@@ -80,8 +80,6 @@ and **schema location**.
     xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
 http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
 http://www.mulesoft.org/schema/mule/bigquery http://www.mulesoft.org/schema/mule/bigquery/current/mule-bigquery.xsd">
-
-
 </mule>
 ```
 
