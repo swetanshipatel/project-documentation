@@ -1602,7 +1602,7 @@ described above.
 Resources
 ---------
 
--   [BiqQuery Connector Release Notes](bq_release_notes.html).
+-   [BiqQuery Connector Release Notes](bq_1.1.0_release_notes.html).
 
 -   [BiqQuery Connector API docs - Version 1.1.0](bq_1.1.0_api_reference.html).
 
