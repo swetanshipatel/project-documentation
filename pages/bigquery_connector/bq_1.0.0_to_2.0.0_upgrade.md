@@ -2,10 +2,10 @@
 title: Google BigQuery Connector Upgrade Document
 keywords: sample
 sidebar: bigquery_connector_sidebar
-permalink: bq_1.0.0_to_1.1.0_upgrade.html
+permalink: bq_1.0.0_to_2.0.0_upgrade.html
 folder: bigquery_connector
 ---
-Google BigQuery Connector Upgrade Document (v1.0.0 to v1.1.0)
+Google BigQuery Connector Upgrade Document (v1.0.0 to v2.0.0)
 ================================
 
 The Google BigQuery connector support following operations of Google BigQuery service:
@@ -46,10 +46,10 @@ The Google BigQuery connector support following operations of Google BigQuery se
 	
 	-   Cancel Job
 
-Google BigQuery connector v1.1.0 has changed and simplified the output of the above operations as compared to v1.0.0.
+Google BigQuery connector v2.0.0 has changed and simplified the output of the above operations as compared to v1.0.0.
 This document provides the detail of the operations with the change in its output/payload.
 
-### Upgrade (Version 1.0.0 to Version 1.1.0)
+### Upgrade (Version 1.0.0 to Version 2.0.0)
 The following table provides information about the affected content of the output for different operations.
 
 Note- Information provided in the tables is applicable when output type is application/java as below -
@@ -63,14 +63,14 @@ Note- Information provided in the tables is applicable when output type is appli
 #### Affected output in 'Create Dataset, Get Dataset, Update Dataset and List Dataset'
 
 <table border="1">
-<tr><th>In v1.0.0</th><th>In v1.1.0</th></tr>
+<tr><th>In v1.0.0</th><th>In v2.0.0</th></tr>
 <tr><td>payload.acl[0].role.constant</td><td>payload.acl[0].role</td></tr>
 </table>
 
 #### Affected output in 'Create Table, Get Table, Update Table and List Table'
 
 <table border="1">
-<tr><th>In v1.0.0</th><th>In v1.1.0</th></tr>
+<tr><th>In v1.0.0</th><th>In v2.0.0</th></tr>
 <tr><td>payload.tableDefinition."type".constant</td><td>payload.tableDefinition."type"</td></tr>
 <tr><td>payload.tableDefinition.schema.fields[0]."type".constant</td><td>payload.tableDefinition.schema.fields[0]."type"</td></tr>
 </table>
@@ -79,7 +79,7 @@ Note- Information provided in the tables is applicable when output type is appli
 #### Affected output in 'Create Job, Get Job and List Job'
 
 <table border="1">
-<tr><th>In v1.0.0</th><th>In v1.1.0</th><th>Remark</th></tr>
+<tr><th>In v1.0.0</th><th>In v2.0.0</th><th>Remark</th></tr>
 <tr><td>payload.status.state.constant</td><td>payload.status.state</td><td></td></tr>
 <tr><td>payload.configuration.tableDefinitions.{EXTERNAL_TABLE_NAME}."type".constant</td><td>payload.configuration.tableDefinitions.{EXTERNAL_TABLE_NAME}."type"</td><td>Applicable only for Query Job.</td></tr>
 <tr><td>payload.configuration.tableDefinitions.{EXTERNAL_TABLE_NAME}.schema.fields[0]."type".constant</td><td>payload.configuration.tableDefinitions.{EXTERNAL_TABLE_NAME}.schema.fields[0]."type"</td><td>Applicable only for Query Job.</td></tr>
@@ -92,15 +92,15 @@ Note- Information provided in the tables is applicable when output type is appli
 #### Affected output in 'List Table Data, Query Job and Get Query Result'
 
 <table border="1">
-<tr><th>In v1.0.0</th><th>In v1.1.0</th></tr>
+<tr><th>In v1.0.0</th><th>In v2.0.0</th></tr>
 <tr><td>ayload.schema.fields[0]."type".constant</td><td>payload.schema.fields[0]."type"</td></tr>
 </table>
 
 ### Resources
 
--   [BiqQuery Connector User Guide - Version 1.1.0](bq_1.1.0_user_guide.html).
+-   [BiqQuery Connector User Guide - Version 2.0.0](bq_v2_user_guide.html).
 
--   [BiqQuery Connector API docs - Version 1.1.0](bq_1.1.0_api_reference.html).
+-   [BiqQuery Connector API docs - Version 2.0.0](bq_v2_api_reference.html).
 
 {% include links.html %}
 

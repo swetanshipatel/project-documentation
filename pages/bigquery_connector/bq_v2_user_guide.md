@@ -2,7 +2,7 @@
 title: Google BigQuery Connector User Guide
 toc: true
 sidebar: bigquery_connector_sidebar
-permalink: bq_1.1.0_user_guide.html
+permalink: bq_v2_user_guide.html
 folder: bigquery_connector
 ---
 Google BigQuery Connector
@@ -23,7 +23,7 @@ guide to understand how to set up and configure a basic flow using the
 connector.
 
 Track features and API version updates using the Google BigQuery
-[Connector Release Notes](bq_1.1.0_release_notes.html). Review
+[Connector Release Notes](bq_v2_release_notes.html). Review
 the connector operations and see how they work by reviewing the
 technical reference alongside the demo applications
 
@@ -44,7 +44,7 @@ Software Requirements {#requirements}
 ---------------------
 
 For software requirements, visit the [Connector Release
-Notes](bq_1.1.0_release_notes.html).
+Notes](bq_v2_release_notes.html).
 
 Installation
 ------------
@@ -97,7 +97,7 @@ this XML snippet in pom.xml file in the Mule project.
            <dependency>
                 <groupId>com.mulesoft.connectors</groupId>
                 <artifactId>mule-bigquery-connector</artifactId>
-                <version>1.1.0</version>
+                <version>2.0.0</version>
                 <classifier>mule-plugin</classifier>
             </dependency>
 
@@ -202,7 +202,7 @@ Mule.
     makes sure that DataWeave knows the data format and structure it
     must work with so you don’t have to figure it out manually. Mule
     developer can refer to [BiqQuery Connector API
-    docs](bq_1.1.0_api_reference.html) and [Google BigQuery
+    docs](bq_v2_api_reference.html) and [Google BigQuery
     JavaDocs](https://googleapis.dev/java/google-cloud-clients/latest/com/google/cloud/bigquery/package-summary.html)
     for more information about complex input or return types.
 
@@ -1602,10 +1602,10 @@ described above.
 Resources
 ---------
 
--   [BiqQuery Connector Release Notes](bq_1.1.0_release_notes.html).
+-   [BiqQuery Connector Release Notes](bq_v2_release_notes.html).
 
--   [BiqQuery Connector API docs - Version 1.1.0](bq_1.1.0_api_reference.html).
+-   [BiqQuery Connector API docs - Version 2.0.0](bq_v2_api_reference.html).
 
--   [BiqQuery Connector Upgrade (Version 1.0.0 to Version 1.1.0)](bq_1.0.0_to_1.1.0_upgrade.html).
+-   [BiqQuery Connector Upgrade (Version 1.0.0 to Version 2.0.0)](bq_1.0.0_to_2.0.0_upgrade.html).
 
 {% include links.html %}

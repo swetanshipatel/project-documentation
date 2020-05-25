@@ -2,7 +2,7 @@
 title: Google BigQuery Connector API Reference 
 keywords: sample
 sidebar: bigquery_connector_sidebar
-permalink: bq_1.1.0_api_reference.html
+permalink: bq_v2_api_reference.html
 folder: bigquery_connector
 ---
 
