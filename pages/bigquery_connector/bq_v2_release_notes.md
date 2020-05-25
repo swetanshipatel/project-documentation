@@ -2,7 +2,7 @@
 title: Google BigQuery Connector Release Notes
 keywords: sample
 sidebar: bigquery_connector_sidebar
-permalink: bq_1.1.0_release_notes.html
+permalink: bq_v2_release_notes.html
 folder: bigquery_connector
 ---
 Google BigQuery Connector Release Notes
@@ -21,9 +21,9 @@ basic flow using the connector. Review the connector operations and see
 how they work by reviewing the API Reference document alongside the demo
 applications.
 
-### Google BigQuery Connector v1.1.0
+### Google BigQuery Connector v2.0.0
 
-#### Version V1.1.0 Compatibility
+#### Version V2.0.0 Compatibility
 <table border="1">
 <tr><th>Software</th><th>Version</th></tr>
 <tr><td>Mule Runtime</td><td>4.2.1</td></tr>
@@ -31,7 +31,7 @@ applications.
 
 #### Features
 
-1. Output of Google BigQuery connector operations are changed and simplified. Please refer [Connector Upgrade Document](bq_1.0.0_to_1.1.0_upgrade.html) for more details.
+1. Output of Google BigQuery connector operations are changed and simplified. Please refer [Connector Upgrade Document](bq_1.0.0_to_2.0.0_upgrade.html) for more details.
 
 
 
