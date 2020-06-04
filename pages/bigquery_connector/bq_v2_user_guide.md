@@ -622,13 +622,15 @@ described above.
 		</flow>
 		<sub-flow name="extractJobFlow" doc:id="be8d2791-bf80-4f85-a5a3-d23a6db1513c" >
 			<bigquery:create-job doc:name="Create Job" doc:id="2c10a3ed-b2ee-4095-a7ee-2ef40cc65a7b" config-ref="Google_BigQuery_Config">
-				<bigquery:job-config >
-					<bigquery:extract-job >
-						<bigquery:destination-uris >
-							<bigquery:destination-uri value="${bigquery.extractJob.destinationUri}" />
-						</bigquery:destination-uris>
-						<bigquery:source-table table="${bigquery.table}" dataset="${bigquery.dataset}" />
-					</bigquery:extract-job>
+				<bigquery:job-config>
+					<bigquery:job-configuration>
+						<bigquery:extract-job>
+							<bigquery:destination-uris >
+								<bigquery:destination-uri value="${bigquery.extractJob.destinationUri}" />
+							</bigquery:destination-uris>
+							<bigquery:source-table table="${bigquery.table}" dataset="${bigquery.dataset}" />
+						</bigquery:extract-job>
+					</bigquery:job-configuration>
 				</bigquery:job-config>
 				<bigquery:job-info />
 			</bigquery:create-job>
@@ -864,12 +866,14 @@ described in the previous section.
 			
 			<bigquery:create-job doc:name="Create job" doc:id="68829ec2-8067-4995-a8c9-af11c1d127c1" config-ref="Google_BigQuery_Config">
 				<bigquery:job-config >
-					<bigquery:load-job formatOption="${bigquery.loadJob.formatOption}">
-						<bigquery:source-uris >
-							<bigquery:source-uri value="${bigquery.loadJob.sourceUri}" />
-						</bigquery:source-uris>
-						<bigquery:destination-table table="${bigquery.table}" dataset="${bigquery.dataset}" />
-					</bigquery:load-job>
+					<bigquery:job-configuration>
+						<bigquery:load-job formatOption="${bigquery.loadJob.formatOption}">
+							<bigquery:source-uris >
+								<bigquery:source-uri value="${bigquery.loadJob.sourceUri}" />
+							</bigquery:source-uris>
+							<bigquery:destination-table table="${bigquery.table}" dataset="${bigquery.dataset}" />
+						</bigquery:load-job>
+					</bigquery:job-configuration>
 				</bigquery:job-config>
 				<bigquery:job-info />
 			</bigquery:create-job>
@@ -1522,20 +1526,22 @@ described above.
 		
 		<sub-flow name="asynchronousQueryDataSubFlow" doc:id="173d5c84-ede6-40b1-9e8c-eb6e57709779" >
 			<bigquery:create-job doc:name="Create Job" doc:id="6757a8b4-e3ad-4421-a7c1-630a88ff442a" config-ref="Google_BigQuery_Config">
-				<bigquery:job-config >
-					<bigquery:query-job >
-						<bigquery:query-string >SELECT * FROM `${bigquery.projectId}.${bigquery.dataset}.${bigquery.table}` WHERE ContactDetails.Address.State in UNNEST (@param)</bigquery:query-string>
-						<bigquery:named-parameters >
-							<bigquery:named-parameter-configuration key='#["param"]' >
-								<bigquery:named-parameter arrayType="true" type="STRING" >
-									<bigquery:values >
-										<bigquery:value value="#['MH']" />
-										<bigquery:value value="#['GJ']" />
-									</bigquery:values>
-								</bigquery:named-parameter>
-							</bigquery:named-parameter-configuration>
-						</bigquery:named-parameters>
-					</bigquery:query-job>
+				<bigquery:job-config>
+					<bigquery:job-configuration>
+						<bigquery:query-job >
+							<bigquery:query-string >SELECT * FROM `${bigquery.projectId}.${bigquery.dataset}.${bigquery.table}` WHERE ContactDetails.Address.State in UNNEST (@param)</bigquery:query-string>
+							<bigquery:named-parameters >
+								<bigquery:named-parameter-configuration key='#["param"]' >
+									<bigquery:named-parameter arrayType="true" type="STRING" >
+										<bigquery:values >
+											<bigquery:value value="#['MH']" />
+											<bigquery:value value="#['GJ']" />
+										</bigquery:values>
+									</bigquery:named-parameter>
+								</bigquery:named-parameter-configuration>
+							</bigquery:named-parameters>
+						</bigquery:query-job>
+					</bigquery:job-configuration>
 				</bigquery:job-config>
 				<bigquery:job-info />
 			</bigquery:create-job>
