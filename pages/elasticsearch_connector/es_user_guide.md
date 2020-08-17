@@ -612,9 +612,8 @@ described above.
 Resources
 =========
 
--   [Elasticsearch Connector Release
-    Notes](es_release_notes.html).
+-   [Elasticsearch Connector Release Notes](https://opendoc.gslab.com/es_release_notes.html).
 
--   [Elasticsearch API docs](es_api_reference.html).
+-   [Elasticsearch Connector API docs - Version 1](https://opendoc.gslab.com/es_api_reference.html).
 
 {% include links.html %}
