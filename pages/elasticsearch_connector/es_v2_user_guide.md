@@ -8,10 +8,10 @@ folder: elasticsearch_connector
 Elasticsearch Connector
 =========================
 
-![Elasticsearch](./images/mulesoft/bigquery-connector/elasticsearch-logo.png)
+![Elasticsearch](./images/mulesoft/elasticsearch-connector/elasticsearch-logo.png)
 
 Overview
-========
+--------
 
 The Elasticsearch connector allows you to access the Elasticsearch REST
 API through Anypoint Platform. Elasticsearch is a distributed, open
@@ -22,12 +22,13 @@ supports HTTP, HTTP with basic authentication and HTTPS connections to
 Elasticsearch instance. Read through this user guide to understand how
 to set up and configure a basic flow using the connector.
 
-Track features and API version updates using the Elasticsearch connector
-release notes. Review the connector operations and see how they work by
+Track features and API version updates using the [Elasticsearch connector
+release notes](https://opendoc.gslab.com/es_release_notes.html). 
+Review the connector operations and see how they work by
 reviewing the technical reference alongside the demo applications.
 
 Introduction
-==================
+------------
 
 This document assumes that user is familiar with Elasticsearch,
 [Anypoint Connectors](https://docs.mulesoft.com/connectors/), and
@@ -39,13 +40,13 @@ Concepts](https://docs.mulesoft.com/mule-runtime/4.2/) and
 [Elasticsearch](https://www.elastic.co/).
 
 Software Requirements {#requirements}
-=====================
+---------------------
 
 For software requirements, visit the [Connector Release
 Notes](https://opendoc.gslab.com/es_release_notes.html).
 
 Installation
-==============
+-------------
 
 To install the connector in Anypoint Studio using the instructions
 in [Installing a Connector from Anypoint
@@ -61,9 +62,9 @@ connector from the palette onto the Anypoint Studio canvas, studio
 automatically populates the XML code with the connector **namespace**
 and **schema location**.
 
-**Namespace:** `+http://www.mulesoft.org/schema/mule/elasticsearch+`
+**Namespace:** `http://www.mulesoft.org/schema/mule/elasticsearch`
 
-**Schema Location:** `+http://www.mulesoft.org/schema/mule/elasticsearch/current/mule-elasticsearch.xsd+`
+**Schema Location:** `http://www.mulesoft.org/schema/mule/elasticsearch/current/mule-elasticsearch.xsd`
 
 > **Tip**
 >
@@ -91,14 +92,14 @@ After downloading and installing the connector, following steps make the
 Elasticsearch connector available inside a Mule application for use
 and to package the application with connector. If using Anypoint Studio,
 it will do this automatically. For Maven dependency management, include
-this XML snippet in pom.xml file in 'pom.xml' of the Mule project.
+this XML snippet in pom.xml file of the Mule project.
 					
-					<dependency>
-							<groupId>com.mulesoft.connectors</groupId>
-							<artifactId>mule-elasticsearch-connector</artifactId>
-							<version>2.0.0</version>
-							<classifier>mule-plugin</classifier>
-					</dependency>
+	<dependency>
+			<groupId>com.mulesoft.connectors</groupId>
+			<artifactId>mule-elasticsearch-connector</artifactId>
+			<version>2.0.0</version>
+			<classifier>mule-plugin</classifier>
+	</dependency>
 
 Configuration
 -------------
@@ -295,13 +296,15 @@ Common Use Cases
 
 ### Elasticsearch as a Document Store {#use-case-1}
 
-This use case demonstrates uploading bulk of data to Elasticsearch 
-using 'Document - Bulk' operation. Once data is uploaded, it uses 'Document - Get' 
-operation to retrieve one of the document from the uploaded dataset. This usecase
-uses readily available dataset 'shakespeare_6.0.json' present in the resource folder.
+-	This use case demonstrates uploading bulk of data to Elasticsearch 
+	using **Document - Bulk** operation. Once data is uploaded, it uses **Document - Get**
+	operation to retrieve one of the document from the uploaded dataset. 
+	
+-	This usecase uses readily available dataset 'shakespeare_6.0.json' present in the resource folder of demo application.
 	
 Elasticsearch stores JSON documents. This is an example of a sample document :
-    {
+    
+	{
 		"type":"line",
 		"line_id":6672,
 		"play_name":"Henry VI Part 2",
@@ -330,7 +333,7 @@ Elasticsearch stores JSON documents. This is an example of a sample document :
 -   Select the **Document - Bulk** operation and create a new connector configuration. 
 	Select connection as **HTTP connection** and add host and port of Elasticsearch.
 
--   Configure the **Document - Bulk**, provide appropriate index and browse the input data file.
+-   Configure the **Document - Bulk**, provide appropriate **index** and browse **the input data file**.
 	(Example: shakespeare_6.0.json)
 
 -   Drag the **Logger** onto the canvas and log **payload** as
@@ -339,8 +342,8 @@ Elasticsearch stores JSON documents. This is an example of a sample document :
 -   In the Mule Palette, search for **Document - Get** and drag it 
 	onto the canvas.
 
--   Configure the **Document - Get** operation. Provide index and 
-	document id along with other optional parameters.
+-   Configure the **Document - Get** operation. Provide **index** and 
+	**document id** along with other optional parameters.
 
 -   Drag the **Logger** onto the canvas and log **payload** as
     expression to log the output of the operation.
@@ -669,9 +672,9 @@ described in the previous section.
     expression to log the output of the operation.
 	
 -	Again drag a **Flow Reference** in the main flow and provide flow name of the new sub flow 'update-document'.
-	This sub flow will get a document from an index and will update the document.
+	This sub flow will get a document from an index and will update that document.
 
-	1. Now drag a **Sub Flow** into the canvas and create a new sub flow named 'update-document'.
+	1. Drag a **Sub Flow** into the canvas and create a new sub flow named 'update-document'.
 	
 	2. In the Mule Palette, search for **Document- Get** operation and drag it into 
 	newly created sub flow 'update-document'.
@@ -684,7 +687,7 @@ described in the previous section.
 
 	7. Configure 'Document - Update' operation with **index** and **document id** of the document which you want to update.
 	
-	8. Also provide either 'JSON input file path' or 'Document source' with other optional arguments.
+	8. Provide either 'JSON input file path' or 'Document source' with other optional arguments.
 	In the sample XML provided below, 'JSON input file path' is set to **UpdateIndexDocument.json** (copied in 
 	src/main/resource folder of demo application)
 

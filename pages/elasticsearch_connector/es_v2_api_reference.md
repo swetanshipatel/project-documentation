@@ -3167,7 +3167,7 @@ Update Document operation allows to update a document based on a script provided
 </li>
 </ul>
 </div></div></td>
-<td class="tableblock halign-left valign-middle"></td>
+<td class="tableblock halign-left valign-middle">Shard Info</td>
 <td class="tableblock halign-left valign-middle"></td>
 <td class="tableblock halign-left valign-middle"></td>
 </tr>
@@ -3683,7 +3683,7 @@ Update Document operation allows to update a document based on a script provided
 </li>
 </ul>
 </div></div></td>
-<td class="tableblock halign-left valign-middle"></td>
+<td class="tableblock halign-left valign-middle">Shard Info</td>
 <td class="tableblock halign-left valign-middle"></td>
 <td class="tableblock halign-left valign-middle"></td>
 </tr>
@@ -4626,7 +4626,7 @@ Update Document operation allows to update a document based on a script provided
 </li>
 </ul>
 </div></div></td>
-<td class="tableblock halign-left valign-middle"></td>
+<td class="tableblock halign-left valign-middle">Shard Info</td>
 <td class="tableblock halign-left valign-middle"></td>
 <td class="tableblock halign-left valign-middle"></td>
 </tr>
@@ -4690,7 +4690,7 @@ Update Document operation allows to update a document based on a script provided
 </li>
 </ul>
 </div></div></td>
-<td class="tableblock halign-left valign-middle"></td>
+<td class="tableblock halign-left valign-middle">Result details</td>
 <td class="tableblock halign-left valign-middle"></td>
 <td class="tableblock halign-left valign-middle"></td>
 </tr>
