@@ -5,6 +5,7 @@ sidebar: elasticsearch_connector_sidebar
 permalink: es_v2_user_guide.html
 folder: elasticsearch_connector
 ---
+
 Elasticsearch Connector
 =========================
 
@@ -48,12 +49,22 @@ Notes](https://opendoc.gslab.com/es_release_notes.html).
 Installation
 -------------
 
-To install the connector in Anypoint Studio using the instructions
-in [Installing a Connector from Anypoint
-Exchange](https://docs.mulesoft.com/anypoint-studio/v/7.1/add-modules-in-studio-to).
+Add <connector name> to your Mule project to automatically populate the XML code with the connector’s namespace and schema location and add the required dependencies to the project’s pom.xml file.
+To add the connector to your Mule Project: 
 
-Additionally, we recommend to keep Studio up to date with its latest
-version.
+1. In the Mule Palette view, click (X) Search in Exchange.
+
+2. In Add Modules to Project, type elasticsearch in the search field.
+
+3. Click Elasticseach in Available modules.
+
+4. Click Add.
+
+5. Click Finish.
+
+Adding a connector to a Mule project in Studio does not make that connector available to other projects in your Studio workspace.
+
+Additionally, we recommend to keep Studio up to date with its latest version.
 
 ### Connector Namespace and Schema {#ns-schema}
 
