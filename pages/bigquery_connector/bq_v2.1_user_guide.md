@@ -2,7 +2,7 @@
 title: Google BigQuery Connector User Guide
 toc: true
 sidebar: bigquery_connector_sidebar
-permalink: bq_v2_user_guide.html
+permalink: bq_v2.1_user_guide.html
 folder: bigquery_connector
 ---
 Google BigQuery Connector
@@ -97,7 +97,7 @@ this XML snippet in pom.xml file in the Mule project.
            <dependency>
                 <groupId>com.mulesoft.connectors</groupId>
                 <artifactId>mule-bigquery-connector</artifactId>
-                <version>2.0.0</version>
+                <version>2.1.0</version>
                 <classifier>mule-plugin</classifier>
             </dependency>
 
@@ -143,17 +143,33 @@ that only your application can access.\
  For Creating and managing service account keys, refer [Google
 Cloud](https://cloud.google.com/iam/docs/creating-managing-service-account-keys).
 
-Following parameters are required for **SERVICE ACCOUNT KEY**
-configuration:
+There are 2 ways to configure the connector and following parameters are required for **SERVICE ACCOUNT KEY** configuration:
+
+1.  Service Account File
+
+2.  Service Account File Content
+
+**Service Account File**
 
 <table border="1">
 
 <tr><th>Field</th><th>Description</th></tr>
 <tr><td>Project ID</td><td>Project ID of Google Cloud Platform’s project (If any) or create a new project on Google Cloud Platform.</td></tr>
-<tr><td>Service Account Key (JSON) File</td><td>Associated with Google Cloud Platform’s Project. Download the file, place it in <b>BASE_LOCATION_OF_PROJECT/src/main/resources</b> folder and provide it's relative path.</td></tr>
+<tr><td>Service Account Key (JSON) File Name</td><td>Associated with Google Cloud Platform’s Project. Download the file, place it in <b>BASE_LOCATION_OF_PROJECT/src/main/resources</b> folder and provide it's relative path.</td></tr>
 </table>
 
-![Bigquery-global-config](./images/mulesoft/bigquery-connector/ProjectConfiguration.png)
+![Bigquery-global-config](./images/mulesoft/bigquery-connector/ProjectConfigKeyFile-v2.1.JPG)
+
+**Service Account File Content**
+
+<table border="1">
+
+<tr><th>Field</th><th>Description</th></tr>
+<tr><td>Project ID</td><td>Project ID of Google Cloud Platform’s project (If any) or create a new project on Google Cloud Platform.</td></tr>
+<tr><td>Service Account Key (JSON) File Content (base64 encoded)</td><td>Associated with Google Cloud Platform’s Project. Download the file, provide it's content in base64 format in this field.</td></tr>
+</table>
+
+![Bigquery-global-config](./images/mulesoft/bigquery-connector/ProjectConfigKeyFileContent-v2.1.JPG)
 
 ### Understanding the Google BigQuery Connector {#operations}
 
@@ -851,7 +867,7 @@ described in the previous section.
 		</http:listener-config>
 		
 		<bigquery:config name="Google_BigQuery_Config" doc:name="Google BigQuery Config" doc:id="fad958a1-e62f-47ad-91d5-ca4942c0a31b" >
-			<bigquery:connection projectId="${bigquery.projectId}" jsonServiceAccountKeyFile="${bigquery.jsonServiceAccountKeyFile}" />
+			<bigquery:key-file-content-connection projectId="${bigquery.projectId}" jsonServiceAccountKeyFile="${bigquery.jsonServiceAccountKeyFileContent}" />
 		</bigquery:config>
 		
 		<http:request-config name="HTTP_Request_configuration" doc:name="HTTP Request configuration" doc:id="54dad089-58e8-49ab-a484-ca56a0c4a114" >
@@ -1610,8 +1626,6 @@ Resources
 
 -   [BiqQuery Connector Release Notes](bq_release_notes.html).
 
--   [BiqQuery Connector API docs - Version 2.0.0](bq_v2_api_reference.html).
-
--   [BiqQuery Connector Upgrade (Version 1.0.0 to Version 2.0.0)](bq_1.0.0_to_2.0.0_upgrade.html).
+-   [BiqQuery Connector API docs - Version 2.0.0](bq_v2.1_api_reference.html).
 
 {% include links.html %}
