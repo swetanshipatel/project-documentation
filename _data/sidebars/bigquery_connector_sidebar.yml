@@ -3,7 +3,6 @@
 entries:
 - title: Google BigQuery Connector
   product: Google BigQuery Connector
-  version: 1.0
   folders:
 
   - title:
@@ -25,17 +24,28 @@ entries:
     - title: Home
       url: /bq_landing_page.html
       output: web
-
-    - title: Connector Guide
-      url: /bq_user_guide.html
-      output: web
-
     - title: Connector Release Notes
       url: /bq_release_notes.html
       output: web
 
-    - title: Connector API Reference
+  - title: Connector Guide
+    output: web
+    folderitems:
+    - title: Version 1.0.0
+      url: /bq_user_guide.html
+      output: web
+
+    - title: Version 2.0.0
+      url: /bq_v2_user_guide.html
+      output: web
+        
+  - title: Connector API Reference
+    output: web
+    folderitems:
+    - title: Version 1.0.0
       url: /bq_api_reference.html
       output: web
 
-
+    - title: Version 2.0.0
+      url: /bq_v2_api_reference.html
+      output: web

@@ -16,20 +16,34 @@ massive datasets working in conjunction with Google Storage. The
 connector exposes Google BigQuery operations by executing their API
 calls as per configuration.
 
-Read through this user guide to understand how to set up and configure a
+Read through the User Guide to understand how to set up and configure a
 basic flow using the connector. Review the connector operations and see
-how they work by reviewing the Technical Reference alongside the Demo
-Applications. [BigQuery Connector User Guide](bq_user_guide.html)
+how they work by reviewing the API Reference document alongside the demo
+applications.
 
-### Google BigQuery Connector v1.0.0
+### Google BigQuery Connector v2.0.0
 
-### Version V1.0 Compatibility
+#### Version V2.0.0 Compatibility
 <table border="1">
 <tr><th>Software</th><th>Version</th></tr>
 <tr><td>Mule Runtime</td><td>4.2.1</td></tr>
 </table>
 
-### Features
+#### Features
+
+1. Output of Google BigQuery connector operations are changed and simplified. Please refer [Connector Upgrade Document](bq_1.0.0_to_2.0.0_upgrade.html) for more details.
+
+
+
+### Google BigQuery Connector v1.0.0
+
+#### Version V1.0.0 Compatibility
+<table border="1">
+<tr><th>Software</th><th>Version</th></tr>
+<tr><td>Mule Runtime</td><td>4.2.1</td></tr>
+</table>
+
+#### Features
 
 1.  Authentication using Service Account Key
 
@@ -84,8 +98,8 @@ Applications. [BigQuery Connector User Guide](bq_user_guide.html)
 -   Learn how to [Install Anypoint
     Connectors](https://docs.mulesoft.com/anypoint-studio/v/7.1/add-modules-in-studio-to).
 
--   Access MuleSoft’ [MuleSoft Help
-    Center](https://help.mulesoft.com/s/) to support, training and pose
+-   Access [MuleSoft Help
+    Center](https://help.mulesoft.com/s/) for support, training and to post
     questions and get help from Mule’s broad community of users.
 
 -   To access MuleSoft’s expert support team,
