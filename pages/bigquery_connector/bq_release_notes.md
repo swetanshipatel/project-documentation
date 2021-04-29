@@ -21,6 +21,28 @@ basic flow using the connector. Review the connector operations and see
 how they work by reviewing the API Reference document alongside the demo
 applications.
 
+
+
+### Google BigQuery Connector v2.1.0
+
+#### Version V2.1.0 Compatibility
+<table border="1">
+<tr><th>Software</th><th>Version</th></tr>
+<tr><td>Mule Runtime</td><td>4.2.1</td></tr>
+</table>
+
+#### Fixed Issues
+
+1. Error - 'Could not serialize object' in the output of 'Get Query Result, Query and List Table Data'.
+
+2. NullPointerException occurred while trying to access property 'nextPage' if nextPage does not exist in result.
+
+#### Features
+
+1. Connector configuration allows passing service account key file content directly in BASE64 encoded string format along with service key file name.
+
+
+
 ### Google BigQuery Connector v2.0.0
 
 #### Version V2.0.0 Compatibility

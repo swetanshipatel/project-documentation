@@ -116,7 +116,7 @@ This class provides connection with Project ID and JSON service account key file
 <td class="tableblock halign-left valign-middle"><div><div class="paragraph">
 <p>String</p>
 </div></div></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">The service authentication credentials</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">JSON service account key file name for service authentication credentials.</p></td>
 <td class="tableblock halign-left valign-middle"></td>
 <td class="tableblock halign-center valign-middle"><p class="tableblock"><strong>x</strong>&#160;</p></td>
 </tr>
@@ -183,7 +183,7 @@ This class provides connection with Project ID and JSON service account key file
 <td class="tableblock halign-left valign-middle"><div><div class="paragraph">
 <p>String</p>
 </div></div></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">The service authentication credentials</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">JSON service account key file content in base64 encoded format for service authentication credentials.</p></td>
 <td class="tableblock halign-left valign-middle"></td>
 <td class="tableblock halign-center valign-middle"><p class="tableblock"><strong>x</strong>&#160;</p></td>
 </tr>

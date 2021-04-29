@@ -38,6 +38,10 @@ entries:
     - title: Version 2.0.0
       url: /bq_v2_user_guide.html
       output: web
+    
+    - title: Version 2.1.0
+      url: /bq_v2.1_user_guide.html
+      output: web
         
   - title: Connector API Reference
     output: web
@@ -48,4 +52,8 @@ entries:
 
     - title: Version 2.0.0
       url: /bq_v2_api_reference.html
+      output: web
+      
+    - title: Version 2.1.0
+      url: /bq_v2.1_api_reference.html
       output: web
