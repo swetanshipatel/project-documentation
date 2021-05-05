@@ -23,7 +23,7 @@ applications.
 
 
 
-### Google BigQuery Connector v2.1.0
+### Google BigQuery Connector v2.1.0 - April 30, 2021
 
 #### Version V2.1.0 Compatibility
 <table border="1">
