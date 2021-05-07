@@ -32,7 +32,7 @@ entries:
     output: web
     folderitems:
     - title: Version 1.0.0
-      url: /bq_user_guide.html
+      url: /bq_v1_user_guide.html
       output: web
 
     - title: Version 2.0.0
@@ -40,14 +40,14 @@ entries:
       output: web
     
     - title: Version 2.1.0
-      url: /bq_v2.1_user_guide.html
+      url: /bq_user_guide.html
       output: web
         
   - title: Connector API Reference
     output: web
     folderitems:
     - title: Version 1.0.0
-      url: /bq_api_reference.html
+      url: /bq_v1_api_reference.html
       output: web
 
     - title: Version 2.0.0
@@ -55,5 +55,5 @@ entries:
       output: web
       
     - title: Version 2.1.0
-      url: /bq_v2.1_api_reference.html
+      url: /bq_api_reference.html
       output: web
