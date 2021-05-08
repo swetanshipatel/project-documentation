@@ -2,7 +2,7 @@
 title: Google BigQuery Connector User Guide
 toc: true
 sidebar: bigquery_connector_sidebar
-permalink: bq_v2.1_user_guide.html
+permalink: bq_v1_user_guide.html
 folder: bigquery_connector
 ---
 Google BigQuery Connector
@@ -97,7 +97,7 @@ this XML snippet in pom.xml file in the Mule project.
            <dependency>
                 <groupId>com.mulesoft.connectors</groupId>
                 <artifactId>mule-bigquery-connector</artifactId>
-                <version>2.1.0</version>
+                <version>1.0.0</version>
                 <classifier>mule-plugin</classifier>
             </dependency>
 
@@ -108,7 +108,7 @@ Configuration
 
 To use the BigQuery connector in a Mule application project:
 
-1.  In Anypoint Studio, click **File \> New \> Mule Project**
+1.  In Anypoint Studio, click **File \> New \> Mule Project**\
      ![Create New Project](./images/mulesoft/bigquery-connector/create-new-project.png)
 	 <br>
      Select Mule project from the dialog box.
@@ -143,33 +143,17 @@ that only your application can access.\
  For Creating and managing service account keys, refer [Google
 Cloud](https://cloud.google.com/iam/docs/creating-managing-service-account-keys).
 
-There are 2 ways to configure the connector and following parameters are required for **SERVICE ACCOUNT KEY** configuration:
-
-1.  Service Account File
-
-2.  Service Account File Content
-
-**Service Account File**
+Following parameters are required for **SERVICE ACCOUNT KEY**
+configuration:
 
 <table border="1">
 
 <tr><th>Field</th><th>Description</th></tr>
 <tr><td>Project ID</td><td>Project ID of Google Cloud Platform’s project (If any) or create a new project on Google Cloud Platform.</td></tr>
-<tr><td>Service Account Key (JSON) File Name</td><td>Associated with Google Cloud Platform’s Project. Download the file, place it in <b>BASE_LOCATION_OF_PROJECT/src/main/resources</b> folder and provide it's relative path.</td></tr>
+<tr><td>Service Account Key (JSON) File</td><td>Associated with Google Cloud Platform’s Project. Download the file, place it in <b>BASE_LOCATION_OF_PROJECT/src/main/resources</b> folder and provide it's relative path.</td></tr>
 </table>
 
-![Bigquery-global-config](./images/mulesoft/bigquery-connector/ProjectConfigKeyFile-v2.1.JPG)
-
-**Service Account File Content**
-
-<table border="1">
-
-<tr><th>Field</th><th>Description</th></tr>
-<tr><td>Project ID</td><td>Project ID of Google Cloud Platform’s project (If any) or create a new project on Google Cloud Platform.</td></tr>
-<tr><td>Service Account Key (JSON) File Content (base64 encoded)</td><td>Associated with Google Cloud Platform’s Project. Download the file, provide it's content in base64 format in this field.</td></tr>
-</table>
-
-![Bigquery-global-config](./images/mulesoft/bigquery-connector/ProjectConfigKeyFileContent-v2.1.JPG)
+![Bigquery-global-config](./images/mulesoft/bigquery-connector/ProjectConfiguration.png)
 
 ### Understanding the Google BigQuery Connector {#operations}
 
@@ -218,7 +202,7 @@ Mule.
     makes sure that DataWeave knows the data format and structure it
     must work with so you don’t have to figure it out manually. Mule
     developer can refer to [BiqQuery Connector API
-    docs](bq_v2_api_reference.html) and [Google BigQuery
+    docs](bq_v1_api_reference.html) and [Google BigQuery
     JavaDocs](https://googleapis.dev/java/google-cloud-clients/latest/com/google/cloud/bigquery/package-summary.html)
     for more information about complex input or return types.
 
@@ -452,7 +436,7 @@ deletes dataset and table once extract job complete execution.
     %dw 2.0
     output application/java
     ---
-	payload.status.state
+    payload.status.state.constant as String
 
 -   This **jobStatus** variable can be used to check the status of the
     Job.
@@ -498,193 +482,190 @@ described above.
 
     <?xml version="1.0" encoding="UTF-8"?>
 
-	<mule xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core" 
-		xmlns:file="http://www.mulesoft.org/schema/mule/file"
-		xmlns:bigquery="http://www.mulesoft.org/schema/mule/bigquery"
-		xmlns:http="http://www.mulesoft.org/schema/mule/http" 
-		xmlns="http://www.mulesoft.org/schema/mule/core" 
-		xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
-		http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
-		http://www.mulesoft.org/schema/mule/bigquery http://www.mulesoft.org/schema/mule/bigquery/current/mule-bigquery.xsd
-	http://www.mulesoft.org/schema/mule/file http://www.mulesoft.org/schema/mule/file/current/mule-file.xsd
-	http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd">
+    <mule xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core"
+        xmlns:file="http://www.mulesoft.org/schema/mule/file"
+        xmlns:bigquery="http://www.mulesoft.org/schema/mule/bigquery"
+        xmlns:http="http://www.mulesoft.org/schema/mule/http"
+        xmlns="http://www.mulesoft.org/schema/mule/core"
+        xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+        http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+        http://www.mulesoft.org/schema/mule/bigquery http://www.mulesoft.org/schema/mule/bigquery/current/mule-bigquery.xsd
+    http://www.mulesoft.org/schema/mule/file http://www.mulesoft.org/schema/mule/file/current/mule-file.xsd
+    http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd">
 
-		<configuration-properties file="mule-application.properties" />
+        <configuration-properties file="mule-application.properties" />
 
-		<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="dfd19971-8787-4989-a415-96de3ce3f63b" >
-			<http:listener-connection host="0.0.0.0" port="8081" />
-		</http:listener-config>
-		
-		<bigquery:config name="Google_BigQuery_Config" doc:name="Google BigQuery Config" doc:id="12ffd8ec-da1b-4407-ac47-62f43ab5c2d9" >
-			<bigquery:connection projectId="${bigquery.projectId}" jsonServiceAccountKeyFile="${bigquery.jsonServiceAccountKeyFile}" />
-		</bigquery:config>
-		
-		<flow name="insertDataFlow" doc:id="a8e4334f-5902-49d5-b599-976d0026c631" >
-			<http:listener doc:name="Listener" doc:id="20fbe3d6-ee57-4710-aa19-bee843b10e83" config-ref="HTTP_Listener_config" path="/extractData"/>
-			
-			<bigquery:create-dataset doc:name="Create Dataset" doc:id="96e19df9-b9cc-4442-b690-14ead03360e7" config-ref="Google_BigQuery_Config" datasetName="${bigquery.dataset}"/>
-			
-			<set-payload value='#[[{
-		"FieldName" : "Name",
-		"FieldType" : "STRING",
-		"fieldDescription" : "This is name",
-		"fieldMode" : "NULLABLE"
-		},
-	{
-		"FieldName" : "EmployeeID",
-		"FieldType" : "STRING",
-		"fieldDescription" : "This is Employee Id",
-		"fieldMode" : "NULLABLE"
-	},
-	{
-		"FieldName" : "Age",
-		"FieldType" : "INTEGER",
-		"fieldDescription" : "This is Age",
-		"fieldMode" : "NULLABLE"
-	},
-	{
-		"FieldName" : "ContactNumber",
-		"FieldType" : "STRING",
-		"fieldDescription" : "This is Contact Number",
-		"fieldMode" : "NULLABLE"
-	},
-	{
-		"FieldName" : "Designation",
-		"FieldType" : "STRING",
-		"fieldDescription" : "This is Designation",
-		"fieldMode" : "NULLABLE"
-	},
-	{
-		"FieldName" : "Salary",
-		"FieldType" : "FLOAT",
-		"fieldDescription" : "This is Salary",
-		"fieldMode" : "NULLABLE"
-	}
-	]]' doc:name="Set Payload" doc:id="a95006b5-ee37-4a57-9e22-1f2f3b56bf8c" />
-			<bigquery:create-table doc:name="Create Table" doc:id="8e42b1a6-7f68-4036-bba0-0a5a4972252d" config-ref="Google_BigQuery_Config" tableFields="#[%dw 2.0
-	output application/java
-	fun parseSchema(schema) =
-		schema map ( item , index ) -&gt; {
-			fieldName : item.FieldName,
-			fieldType : item.FieldType,
-			fieldDescription : item.fieldDescription,
-			fieldMode : item.fieldMode
-		}
-	---
-	parseSchema(payload)]">
-				<bigquery:table-info>
-					<bigquery:table table="${bigquery.table}" dataset="${bigquery.dataset}" />
-				</bigquery:table-info>
-			</bigquery:create-table>
-			
-			<set-payload value='#[[
-		{
-			"RowId": "1",
-			"Name": "AAAAAA",
-			"EmployeeId" : "1234",
-			"Age" : 25,
-			"ContactNumber" : "11111111111",
-			"Designation" : "SE",
-			"Salary": 500000
-		},
-		{
-			"RowId": "2",
-			"Name": "BBBBBBB",
-			"EmployeeId" : "2345",
-			"Age" : 22,
-			"ContactNumber" : "222222222",
-			"Designation" : "SSE",
-			"Salary": 1000000
-		},
-		{
-			"RowId": "3",
-			"Name": "CCCCCCCC",
-			"EmployeeId" : "3456",
-			"Age" : 29,
-			"ContactNumber" : "3333333333",
-			"Designation" : "LEAD",
-			"Salary": 1500000
-		},
-		{
-			"RowId": "4",
-			"Name": "DDDDDDD",
-			"EmployeeId" : "4567",
-			"Age" : 27,
-			"ContactNumber" : "444444444",
-			"Designation" : "MANAGER",
-			"Salary": 1900000
-		}
-	]]' doc:name="Set Payload" doc:id="8dfb06ae-e326-4bba-8f79-c72fc9c37b65"/>
-			<ee:transform doc:name="Transform Message" doc:id="54c6b703-49c9-48b3-8808-06eb4592aa26" >
-				<ee:message >
-					<ee:set-payload ><![CDATA[%dw 2.0
-	output application/java
-	---
-	payload map (( payload01 , indexOfPayload01 ) -> {
-		Name: payload01.Name,
-		EmployeeId: payload01.EmployeeId,
-		Age: payload01.Age,
-		ContactNumber: payload01.ContactNumber,
-		Designation: payload01.Designation,
-		Salary: payload01.Salary,
-		RowID: payload01.RowId
-	})]]></ee:set-payload>
-				</ee:message>
-			</ee:transform>
-			<bigquery:insert-all doc:name="Insert All" doc:id="ffbc7102-fc39-4145-ab8d-c9922fe53fee" config-ref="Google_BigQuery_Config" rowsData="#[payload]" tableId="${bigquery.table}" datasetId="${bigquery.dataset}">
-			</bigquery:insert-all>
-			<logger level="INFO" doc:name="Logger" doc:id="0fc1f6ca-d002-414d-9d58-7e41cb05837a" message="#[payload]"/>
-			<flow-ref doc:name="Flow Reference" doc:id="8bc003f2-ebe0-4462-a565-3e9dc73b0794" name="extractJobFlow"/>
-		</flow>
-		<sub-flow name="extractJobFlow" doc:id="be8d2791-bf80-4f85-a5a3-d23a6db1513c" >
-			<bigquery:create-job doc:name="Create Job" doc:id="2c10a3ed-b2ee-4095-a7ee-2ef40cc65a7b" config-ref="Google_BigQuery_Config">
-				<bigquery:job-config>
-					<bigquery:job-configuration>
-						<bigquery:extract-job>
-							<bigquery:destination-uris >
-								<bigquery:destination-uri value="${bigquery.extractJob.destinationUri}" />
-							</bigquery:destination-uris>
-							<bigquery:source-table table="${bigquery.table}" dataset="${bigquery.dataset}" />
-						</bigquery:extract-job>
-					</bigquery:job-configuration>
-				</bigquery:job-config>
-				<bigquery:job-info />
-			</bigquery:create-job>
-			<set-variable value="#[%dw 2.0
-	output application/java
-	---
-	payload.jobId.job]" doc:name="Set Variable" doc:id="fdc88411-56ec-412e-91f1-ba4c87551650" variableName="jobId"/>
-			<flow-ref doc:name="Flow Reference" doc:id="fb40cb20-9080-4bcf-938c-8c63357bb88d" name="checkJobStatusFlow"/>
-		</sub-flow>
-		
-		<sub-flow name="checkJobStatusFlow" doc:id="8a644e58-6d70-48ea-ace8-f72428d3720b" >
-			<bigquery:get-job doc:name="Get job" doc:id="80cb077c-b553-4da6-b849-6d1c09f7d855" config-ref="Google_BigQuery_Config" jobName="#[vars.jobId]"/>
-			<set-variable value="#[%dw 2.0
-	output application/java
-	---
-	payload.status.state]" doc:name="Set Variable" doc:id="b7789d0e-77e9-4638-be3d-1411e09ee997" variableName="jobStatus"/>
-			<choice doc:name="Choice" doc:id="8e302a4e-07e5-43b5-b1df-ab357645632f" >
-				<when doc:id="5272c64a-db96-4550-a816-684ce45aed2c" expression="#[vars.jobStatus == 'DONE']">
-					<logger level="INFO" doc:name="Logger" doc:id="2653f90b-cc1f-4aa0-bc15-7e2cab6ebee1" message="#[vars.jobStatus]"/>
-					<flow-ref doc:name="Flow Reference" doc:id="8ff94cb8-3fbb-40f7-af6c-3465d3424b22" name="deleteFlow"/>
-				
-	</when>
-				<otherwise >
-					<logger level="INFO" doc:name="Logger" doc:id="08b88306-7fbc-4bfd-b47a-52d97b5ed1af" message="#[vars.jobStatus]"/>
-					<flow-ref doc:name="Flow Reference" doc:id="6f588215-c941-4581-bd23-8f90fa3c736e" name="checkJobStatusFlow"/>
-				</otherwise>
-			</choice>
-		</sub-flow>
-		
-		<sub-flow name="deleteFlow" doc:id="6b9030d8-5418-4927-9a88-adb8ae0bf31e" >
-			<bigquery:delete-table doc:name="Delete table" doc:id="a0430097-0fe3-4c20-b1db-fc4289693b1f" config-ref="Google_BigQuery_Config">
-				<bigquery:table table="${bigquery.table}" dataset="${bigquery.dataset}" />
-			</bigquery:delete-table>
-			<bigquery:delete-dataset doc:name="Delete dataset" doc:id="3f4f5910-3acd-4c5e-9cc8-670e05a6b6e8" config-ref="Google_BigQuery_Config" datasetId="${bigquery.dataset}"/>
-		</sub-flow>
-		
-	</mule>
+        <http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="dfd19971-8787-4989-a415-96de3ce3f63b" >
+            <http:listener-connection host="0.0.0.0" port="8081" />
+        </http:listener-config>
 
+        <bigquery:config name="Google_BigQuery_Config" doc:name="Google BigQuery Config" doc:id="12ffd8ec-da1b-4407-ac47-62f43ab5c2d9" >
+            <bigquery:connection projectId="${bigquery.projectId}" jsonServiceAccountKeyFile="${bigquery.jsonServiceAccountKeyFile}" />
+        </bigquery:config>
+
+        <flow name="insertDataFlow" doc:id="a8e4334f-5902-49d5-b599-976d0026c631" >
+            <http:listener doc:name="Listener" doc:id="20fbe3d6-ee57-4710-aa19-bee843b10e83" config-ref="HTTP_Listener_config" path="/extractData"/>
+
+            <bigquery:create-dataset doc:name="Create Dataset" doc:id="96e19df9-b9cc-4442-b690-14ead03360e7" config-ref="Google_BigQuery_Config" datasetName="${bigquery.dataset}"/>
+
+            <set-payload value='#[[{
+        "FieldName" : "Name",
+        "FieldType" : "STRING",
+        "fieldDescription" : "This is name",
+        "fieldMode" : "NULLABLE"
+        },
+    {
+        "FieldName" : "EmployeeID",
+        "FieldType" : "STRING",
+        "fieldDescription" : "This is Employee Id",
+        "fieldMode" : "NULLABLE"
+    },
+    {
+        "FieldName" : "Age",
+        "FieldType" : "INTEGER",
+        "fieldDescription" : "This is Age",
+        "fieldMode" : "NULLABLE"
+    },
+    {
+        "FieldName" : "ContactNumber",
+        "FieldType" : "STRING",
+        "fieldDescription" : "This is Contact Number",
+        "fieldMode" : "NULLABLE"
+    },
+    {
+        "FieldName" : "Designation",
+        "FieldType" : "STRING",
+        "fieldDescription" : "This is Designation",
+        "fieldMode" : "NULLABLE"
+    },
+    {
+        "FieldName" : "Salary",
+        "FieldType" : "FLOAT",
+        "fieldDescription" : "This is Salary",
+        "fieldMode" : "NULLABLE"
+    }
+    ]]' doc:name="Set Payload" doc:id="a95006b5-ee37-4a57-9e22-1f2f3b56bf8c" />
+            <bigquery:create-table doc:name="Create Table" doc:id="8e42b1a6-7f68-4036-bba0-0a5a4972252d" config-ref="Google_BigQuery_Config" tableFields="#[%dw 2.0
+    output application/java
+    fun parseSchema(schema) =
+        schema map ( item , index ) -&gt; {
+            fieldName : item.FieldName,
+            fieldType : item.FieldType,
+            fieldDescription : item.fieldDescription,
+            fieldMode : item.fieldMode
+        }
+    ---
+    parseSchema(payload)]">
+                <bigquery:table-info>
+                    <bigquery:table table="${bigquery.table}" dataset="${bigquery.dataset}" />
+                </bigquery:table-info>
+            </bigquery:create-table>
+
+            <set-payload value='#[[
+        {
+            "RowId": "1",
+            "Name": "AAAAAA",
+            "EmployeeId" : "1234",
+            "Age" : 25,
+            "ContactNumber" : "11111111111",
+            "Designation" : "SE",
+            "Salary": 500000
+        },
+        {
+            "RowId": "2",
+            "Name": "BBBBBBB",
+            "EmployeeId" : "2345",
+            "Age" : 22,
+            "ContactNumber" : "222222222",
+            "Designation" : "SSE",
+            "Salary": 1000000
+        },
+        {
+            "RowId": "3",
+            "Name": "CCCCCCCC",
+            "EmployeeId" : "3456",
+            "Age" : 29,
+            "ContactNumber" : "3333333333",
+            "Designation" : "LEAD",
+            "Salary": 1500000
+        },
+        {
+            "RowId": "4",
+            "Name": "DDDDDDD",
+            "EmployeeId" : "4567",
+            "Age" : 27,
+            "ContactNumber" : "444444444",
+            "Designation" : "MANAGER",
+            "Salary": 1900000
+        }
+    ]]' doc:name="Set Payload" doc:id="8dfb06ae-e326-4bba-8f79-c72fc9c37b65"/>
+            <ee:transform doc:name="Transform Message" doc:id="54c6b703-49c9-48b3-8808-06eb4592aa26" >
+                <ee:message >
+                    <ee:set-payload ><![CDATA[%dw 2.0
+    output application/java
+    ---
+    payload map (( payload01 , indexOfPayload01 ) -> {
+        Name: payload01.Name,
+        EmployeeId: payload01.EmployeeId,
+        Age: payload01.Age,
+        ContactNumber: payload01.ContactNumber,
+        Designation: payload01.Designation,
+        Salary: payload01.Salary,
+        RowID: payload01.RowId
+    })]]></ee:set-payload>
+                </ee:message>
+            </ee:transform>
+            <bigquery:insert-all doc:name="Insert All" doc:id="ffbc7102-fc39-4145-ab8d-c9922fe53fee" config-ref="Google_BigQuery_Config" rowsData="#[payload]" tableId="${bigquery.table}" datasetId="${bigquery.dataset}">
+            </bigquery:insert-all>
+            <logger level="INFO" doc:name="Logger" doc:id="0fc1f6ca-d002-414d-9d58-7e41cb05837a" message="#[payload]"/>
+            <flow-ref doc:name="Flow Reference" doc:id="8bc003f2-ebe0-4462-a565-3e9dc73b0794" name="extractJobFlow"/>
+        </flow>
+        <sub-flow name="extractJobFlow" doc:id="be8d2791-bf80-4f85-a5a3-d23a6db1513c" >
+            <bigquery:create-job doc:name="Create Job" doc:id="2c10a3ed-b2ee-4095-a7ee-2ef40cc65a7b" config-ref="Google_BigQuery_Config">
+                <bigquery:job-config >
+                    <bigquery:extract-job >
+                        <bigquery:destination-uris >
+                            <bigquery:destination-uri value="${bigquery.extractJob.destinationUri}" />
+                        </bigquery:destination-uris>
+                        <bigquery:source-table table="${bigquery.table}" dataset="${bigquery.dataset}" />
+                    </bigquery:extract-job>
+                </bigquery:job-config>
+                <bigquery:job-info />
+            </bigquery:create-job>
+            <set-variable value="#[%dw 2.0
+    output application/java
+    ---
+    payload.jobId.job]" doc:name="Set Variable" doc:id="fdc88411-56ec-412e-91f1-ba4c87551650" variableName="jobId"/>
+            <flow-ref doc:name="Flow Reference" doc:id="fb40cb20-9080-4bcf-938c-8c63357bb88d" name="checkJobStatusFlow"/>
+        </sub-flow>
+
+        <sub-flow name="checkJobStatusFlow" doc:id="8a644e58-6d70-48ea-ace8-f72428d3720b" >
+            <bigquery:get-job doc:name="Get job" doc:id="80cb077c-b553-4da6-b849-6d1c09f7d855" config-ref="Google_BigQuery_Config" jobName="#[vars.jobId]"/>
+            <set-variable value="#[%dw 2.0
+    output application/java
+    ---
+    payload.status.state.constant as String]" doc:name="Set Variable" doc:id="b7789d0e-77e9-4638-be3d-1411e09ee997" variableName="jobStatus"/>
+            <choice doc:name="Choice" doc:id="8e302a4e-07e5-43b5-b1df-ab357645632f" >
+                <when doc:id="5272c64a-db96-4550-a816-684ce45aed2c" expression="#[vars.jobStatus == 'DONE']">
+                    <logger level="INFO" doc:name="Logger" doc:id="2653f90b-cc1f-4aa0-bc15-7e2cab6ebee1" message="#[vars.jobStatus]"/>
+                    <flow-ref doc:name="Flow Reference" doc:id="8ff94cb8-3fbb-40f7-af6c-3465d3424b22" name="deleteFlow"/>
+
+    </when>
+                <otherwise >
+                    <logger level="INFO" doc:name="Logger" doc:id="08b88306-7fbc-4bfd-b47a-52d97b5ed1af" message="#[vars.jobStatus]"/>
+                    <flow-ref doc:name="Flow Reference" doc:id="6f588215-c941-4581-bd23-8f90fa3c736e" name="checkJobStatusFlow"/>
+                </otherwise>
+            </choice>
+        </sub-flow>
+
+        <sub-flow name="deleteFlow" doc:id="6b9030d8-5418-4927-9a88-adb8ae0bf31e" >
+            <bigquery:delete-table doc:name="Delete table" doc:id="a0430097-0fe3-4c20-b1db-fc4289693b1f" config-ref="Google_BigQuery_Config">
+                <bigquery:table table="${bigquery.table}" dataset="${bigquery.dataset}" />
+            </bigquery:delete-table>
+            <bigquery:delete-dataset doc:name="Delete dataset" doc:id="3f4f5910-3acd-4c5e-9cc8-670e05a6b6e8" config-ref="Google_BigQuery_Config" datasetId="${bigquery.dataset}"/>
+        </sub-flow>
+
+    </mule>
 
 ### Load Data to BigQuery Table from Google Cloud and Perform Query {#use-case-2}
 
@@ -769,7 +750,7 @@ records once load job complete execution.
     %dw 2.0
     output application/java
     ---
-	payload.status.state
+    payload.status.state.constant as String
 
 -   This **jobStatus** variable can be used to check the status of the
     Job.
@@ -850,104 +831,101 @@ described in the previous section.
 
     <?xml version="1.0" encoding="UTF-8"?>
 
-	<mule xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core"
-		xmlns:bigquery="http://www.mulesoft.org/schema/mule/bigquery"
-		xmlns:http="http://www.mulesoft.org/schema/mule/http"
-		xmlns="http://www.mulesoft.org/schema/mule/core"
-		xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" 
-		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
-					http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
-					http://www.mulesoft.org/schema/mule/bigquery http://www.mulesoft.org/schema/mule/bigquery/current/mule-bigquery.xsd
-	http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd">
+    <mule xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core"
+        xmlns:bigquery="http://www.mulesoft.org/schema/mule/bigquery"
+        xmlns:http="http://www.mulesoft.org/schema/mule/http"
+        xmlns="http://www.mulesoft.org/schema/mule/core"
+        xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+                    http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+                    http://www.mulesoft.org/schema/mule/bigquery http://www.mulesoft.org/schema/mule/bigquery/current/mule-bigquery.xsd
+    http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd">
 
-		<configuration-properties file="mule-application.properties" />
+        <configuration-properties file="mule-application.properties" />
 
-		<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="9a56d0bc-6284-4a37-8828-80da4587a7ba" >
-			<http:listener-connection host="0.0.0.0" port="8081" />
-		</http:listener-config>
-		
-		<bigquery:config name="Google_BigQuery_Config" doc:name="Google BigQuery Config" doc:id="fad958a1-e62f-47ad-91d5-ca4942c0a31b" >
-			<bigquery:key-file-content-connection projectId="${bigquery.projectId}" jsonServiceAccountKeyFile="${bigquery.jsonServiceAccountKeyFileContent}" />
-		</bigquery:config>
-		
-		<http:request-config name="HTTP_Request_configuration" doc:name="HTTP Request configuration" doc:id="54dad089-58e8-49ab-a484-ca56a0c4a114" >
-			<http:request-connection host="localhost" port="9000">
-			</http:request-connection>
-		</http:request-config>
-		
-		<flow name="loadDataFlow" doc:id="374138e6-4904-4bc7-a4ff-560014ee33c7" >
-			<http:listener doc:name="Listener" doc:id="c3e4c3e2-8427-410c-9cfb-917523724b2f" path="${bigquery.httpListener.path}" config-ref="HTTP_Listener_config"/>
-			
-			<bigquery:create-dataset doc:name="Create dataset" doc:id="e2fadc2a-834f-42cb-85d6-07c1319f1c19" datasetName="${bigquery.dataset}" config-ref="Google_BigQuery_Config"/>
-			
-			<bigquery:create-job doc:name="Create job" doc:id="68829ec2-8067-4995-a8c9-af11c1d127c1" config-ref="Google_BigQuery_Config">
-				<bigquery:job-config >
-					<bigquery:job-configuration>
-						<bigquery:load-job formatOption="${bigquery.loadJob.formatOption}">
-							<bigquery:source-uris >
-								<bigquery:source-uri value="${bigquery.loadJob.sourceUri}" />
-							</bigquery:source-uris>
-							<bigquery:destination-table table="${bigquery.table}" dataset="${bigquery.dataset}" />
-						</bigquery:load-job>
-					</bigquery:job-configuration>
-				</bigquery:job-config>
-				<bigquery:job-info />
-			</bigquery:create-job>
+        <http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="9a56d0bc-6284-4a37-8828-80da4587a7ba" >
+            <http:listener-connection host="0.0.0.0" port="8081" />
+        </http:listener-config>
 
-			<set-variable value="#[%dw 2.0
-	output application/java
-	---
-	payload.jobId.job]" doc:name="Set Variable" doc:id="c57e87e8-bd90-43f7-83c5-fe0a610c9617" variableName="jobID"/>
-			<flow-ref doc:name="Flow Reference" doc:id="ebb32e18-09c2-4839-bf99-2817a0d3b1d7" name="queryDataFlow"/>
-			
-			<bigquery:delete-table doc:name="Delete table" doc:id="4d69ab27-251c-479e-8f5b-6fb6d9cb0265" config-ref="Google_BigQuery_Config">
-				<bigquery:table table="${bigquery.table}" dataset="${bigquery.dataset}" />
-			</bigquery:delete-table>
-			
-			<bigquery:delete-dataset doc:name="Delete dataset" doc:id="b39caf65-a113-40a6-aac0-b6f61cffc17b" config-ref="Google_BigQuery_Config" datasetId="${bigquery.dataset}"/>
-		</flow>
-		
-		<sub-flow name="queryDataFlow" doc:id="3167d5b2-9abb-41a3-a74a-49e1e9c60ad6" >
-			<bigquery:get-job doc:name="Get job" doc:id="f44a81db-122b-4e0b-9abf-edacf227ffb5" config-ref="Google_BigQuery_Config" jobName="#[vars.jobId]"/>
-			<set-variable value="#[%dw 2.0
-	output application/java
-	---
-	payload.status.state]" doc:name="Set Variable" doc:id="e829c637-3825-4774-ae8c-1d2af39801e8" variableName="jobStatus"/>
-			<choice doc:name="Choice" doc:id="f78793df-3565-4e52-af50-07598811b37c" >
-				<when doc:id="899037f1-ccdb-4661-aae9-26f0d036b668" expression="#[vars.jobStatus == 'DONE']">
-					<bigquery:query doc:name="Query" doc:id="859d3696-813a-48ca-a460-c2c8ada114ed" config-ref="Google_BigQuery_Config">
-						<bigquery:query-job>
-						<bigquery:query-string>SELECT * FROM `${bigquery.projectId}.${bigquery.dataset}.${bigquery.table}` WHERE Channel_ID=3711 AND Editor__User_Name_='scraig'</bigquery:query-string>
-						</bigquery:query-job>
-						<bigquery:job-info-options />
-					</bigquery:query>
-					<ee:transform doc:name="Transform Message" doc:id="6009fb8a-9c6f-4a41-ab3e-79a114707211" >
-						<ee:message >
-							<ee:set-payload ><![CDATA[%dw 2.0
-	output application/json
-	var schema=payload.schema.fields
-	---
-	payload.values map ((value, index) -> {
-		(schema[0].name): value[0].value,
-		(schema[1].name): value[1].value,
-		(schema[2].name): value[2].value,
-		(schema[3].name): value[3].value,
-	})]]></ee:set-payload>
-						</ee:message>
-					</ee:transform>
-					<logger level="INFO" doc:name="Logger" doc:id="2eb21829-1b9d-4891-909e-2b183654e4e0" message="#[output application/json
-	---
-	payload]" />
-				
-				</when>
-				<otherwise >
-					<logger level="INFO" doc:name="Logger" doc:id="74b1156a-82a6-4f5e-a3ff-84ddc5161949" message="#[vars.jobStatus]"/>
-					<flow-ref doc:name="Flow Reference" doc:id="56f7507b-ed74-4c1e-997b-e89de658ef09" name="queryDataFlow"/>
-				</otherwise>
-			</choice>
-		</sub-flow>
-	</mule>
+        <bigquery:config name="Google_BigQuery_Config" doc:name="Google BigQuery Config" doc:id="fad958a1-e62f-47ad-91d5-ca4942c0a31b" >
+            <bigquery:connection projectId="${bigquery.projectId}" jsonServiceAccountKeyFile="${bigquery.jsonServiceAccountKeyFile}" />
+        </bigquery:config>
 
+        <http:request-config name="HTTP_Request_configuration" doc:name="HTTP Request configuration" doc:id="54dad089-58e8-49ab-a484-ca56a0c4a114" >
+            <http:request-connection host="localhost" port="9000">
+            </http:request-connection>
+        </http:request-config>
+
+        <flow name="loadDataFlow" doc:id="374138e6-4904-4bc7-a4ff-560014ee33c7" >
+            <http:listener doc:name="Listener" doc:id="c3e4c3e2-8427-410c-9cfb-917523724b2f" path="${bigquery.httpListener.path}" config-ref="HTTP_Listener_config"/>
+
+            <bigquery:create-dataset doc:name="Create dataset" doc:id="e2fadc2a-834f-42cb-85d6-07c1319f1c19" datasetName="${bigquery.dataset}" config-ref="Google_BigQuery_Config"/>
+
+            <bigquery:create-job doc:name="Create job" doc:id="68829ec2-8067-4995-a8c9-af11c1d127c1" config-ref="Google_BigQuery_Config">
+                <bigquery:job-config >
+                    <bigquery:load-job formatOption="${bigquery.loadJob.formatOption}">
+                        <bigquery:source-uris >
+                            <bigquery:source-uri value="${bigquery.loadJob.sourceUri}" />
+                        </bigquery:source-uris>
+                        <bigquery:destination-table table="${bigquery.table}" dataset="${bigquery.dataset}" />
+                    </bigquery:load-job>
+                </bigquery:job-config>
+                <bigquery:job-info />
+            </bigquery:create-job>
+
+            <set-variable value="#[%dw 2.0
+    output application/java
+    ---
+    payload.jobId.job]" doc:name="Set Variable" doc:id="c57e87e8-bd90-43f7-83c5-fe0a610c9617" variableName="jobID"/>
+            <flow-ref doc:name="Flow Reference" doc:id="ebb32e18-09c2-4839-bf99-2817a0d3b1d7" name="queryDataFlow"/>
+
+            <bigquery:delete-table doc:name="Delete table" doc:id="4d69ab27-251c-479e-8f5b-6fb6d9cb0265" config-ref="Google_BigQuery_Config">
+                <bigquery:table table="${bigquery.table}" dataset="${bigquery.dataset}" />
+            </bigquery:delete-table>
+
+            <bigquery:delete-dataset doc:name="Delete dataset" doc:id="b39caf65-a113-40a6-aac0-b6f61cffc17b" config-ref="Google_BigQuery_Config" datasetId="${bigquery.dataset}"/>
+        </flow>
+
+        <sub-flow name="queryDataFlow" doc:id="3167d5b2-9abb-41a3-a74a-49e1e9c60ad6" >
+            <bigquery:get-job doc:name="Get job" doc:id="f44a81db-122b-4e0b-9abf-edacf227ffb5" config-ref="Google_BigQuery_Config" jobName="#[vars.jobId]"/>
+            <set-variable value="#[%dw 2.0
+    output application/java
+    ---
+    payload.status.state.constant as String]" doc:name="Set Variable" doc:id="e829c637-3825-4774-ae8c-1d2af39801e8" variableName="jobStatus"/>
+            <choice doc:name="Choice" doc:id="f78793df-3565-4e52-af50-07598811b37c" >
+                <when doc:id="899037f1-ccdb-4661-aae9-26f0d036b668" expression="#[vars.jobStatus == 'DONE']">
+                    <bigquery:query doc:name="Query" doc:id="859d3696-813a-48ca-a460-c2c8ada114ed" config-ref="Google_BigQuery_Config">
+                        <bigquery:query-job>
+                        <bigquery:query-string>SELECT * FROM `${bigquery.projectId}.${bigquery.dataset}.${bigquery.table}` WHERE Channel_ID=3711 AND Editor__User_Name_='scraig'</bigquery:query-string>
+                        </bigquery:query-job>
+                        <bigquery:job-info-options />
+                    </bigquery:query>
+                    <ee:transform doc:name="Transform Message" doc:id="6009fb8a-9c6f-4a41-ab3e-79a114707211" >
+                        <ee:message >
+                            <ee:set-payload ><![CDATA[%dw 2.0
+    output application/json
+    var schema=payload.schema.fields
+    ---
+    payload.values map ((value, index) -> {
+        (schema[0].name): value[0].value,
+        (schema[1].name): value[1].value,
+        (schema[2].name): value[2].value,
+        (schema[3].name): value[3].value,
+    })]]></ee:set-payload>
+                        </ee:message>
+                    </ee:transform>
+                    <logger level="INFO" doc:name="Logger" doc:id="2eb21829-1b9d-4891-909e-2b183654e4e0" message="#[output application/json
+    ---
+    payload]" />
+
+                </when>
+                <otherwise >
+                    <logger level="INFO" doc:name="Logger" doc:id="74b1156a-82a6-4f5e-a3ff-84ddc5161949" message="#[vars.jobStatus]"/>
+                    <flow-ref doc:name="Flow Reference" doc:id="56f7507b-ed74-4c1e-997b-e89de658ef09" name="queryDataFlow"/>
+                </otherwise>
+            </choice>
+        </sub-flow>
+    </mule>
 
 ### Insert Data to BigQuery Table, Perform Asynchronous Query and Get Query Result {#use-case-3}
 
@@ -1249,7 +1227,7 @@ DONE, get the query result. Atlast, it deletes dataset and table.
     %dw 2.0
     output application/java
     ---
-	payload.status.state
+    payload.status.state.constant as String
 
 -   This **jobStatus** variable can be used to check the status of the
     Job.
@@ -1341,291 +1319,289 @@ described above.
 
     <?xml version="1.0" encoding="UTF-8"?>
 
-	<mule xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core"
-		xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns:bigquery="http://www.mulesoft.org/schema/mule/bigquery"
-		xmlns="http://www.mulesoft.org/schema/mule/core"
-		xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="
-	http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
-	http://www.mulesoft.org/schema/mule/bigquery http://www.mulesoft.org/schema/mule/bigquery/current/mule-bigquery.xsd
-	http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+    <mule xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core"
+        xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns:bigquery="http://www.mulesoft.org/schema/mule/bigquery"
+        xmlns="http://www.mulesoft.org/schema/mule/core"
+        xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="
+    http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+    http://www.mulesoft.org/schema/mule/bigquery http://www.mulesoft.org/schema/mule/bigquery/current/mule-bigquery.xsd
+    http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
 
-		<configuration-properties file="mule-application.properties" />
+        <configuration-properties file="mule-application.properties" />
 
-		<bigquery:config name="Google_BigQuery_Config" doc:name="Google BigQuery Config" doc:id="3533061e-e19f-4a0a-a0c5-9d6721bc6e96" >
-			<bigquery:connection projectId="${bigquery.projectId}" jsonServiceAccountKeyFile="${bigquery.jsonServiceAccountKeyFile}"/>
-		</bigquery:config>
-		
-		<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="fd11a444-404a-4ef5-afee-8b917cb8a286" >
-			<http:listener-connection host="0.0.0.0" port="8081" />
-		</http:listener-config>
-		
-		<flow name="insertDataFlow" doc:id="434da132-4106-4fdc-aee0-301136274032" >
-			<http:listener doc:name="Listener" doc:id="1da141b3-834f-4c92-9e7a-8f27bbf43246" config-ref="HTTP_Listener_config" path="${bigquery.httpListener.path}"/>
-			
-			<bigquery:create-dataset doc:name="Create Dataset" doc:id="1046e0f1-a885-4154-9c27-e9550ce8a31a" config-ref="Google_BigQuery_Config" datasetName="${bigquery.dataset}"/>
-			
-			<set-payload doc:name="Set Payload" doc:id="ead5e87c-9dff-4404-9f0d-19ddd28d686a" value='#[[{
-		"FieldName" : "Name",
-		"FieldType" : "STRING",
-		"fieldDescription" : "this is name",
-		"fieldMode" : "NULLABLE"
-		},
-	{
-		"FieldName" : "EmployeeID",
-		"FieldType" : "STRING",
-		"fieldDescription" : "this is employeeId",
-		"fieldMode" : "NULLABLE"
-	},
-	{
-		"FieldName" : "ContactDetails",
-		"FieldType" : "RECORD",
-		"fieldDescription" : "this is contact details",
-		"fieldMode" : "NULLABLE",
-		
-		"subFields" : [{
-			"FieldName" : "Address",
-			"FieldType" : "RECORD",
-			"fieldDescription" : "this is address",
-			"fieldMode" : "NULLABLE",
-			"subFields" : [{
-				"FieldName" : "City",
-				"FieldType" : "STRING",
-				"fieldDescription" : "this is city",
-				"fieldMode" : "NULLABLE"
-			},
-			{
-				"FieldName" : "State",
-				"FieldType" : "STRING",
-				"fieldDescription" : "this is state",
-				"fieldMode" : "NULLABLE"
-			},
-			{
-				"FieldName" : "Country",
-				"FieldType" : "STRING",
-				"fieldDescription" : "this is country",
-				"fieldMode" : "NULLABLE"
-			}]
-		},
-		{
-			"FieldName" : "ContactNumber",
-			"FieldType" : "RECORD",
-			"fieldDescription" : "this is contact number",
-			"fieldMode" : "NULLABLE",
-			
-			"subFields" : [{
-				"FieldName" : "CountryCode",
-				"FieldType" : "STRING",
-				"fieldDescription" : "this is CountryCode",
-				"fieldMode" : "NULLABLE"
-			},
-			{
-				"FieldName" : "MobileNumber",
-				"FieldType" : "INTEGER",
-				"fieldDescription" : "this is MobileNumber",
-				"fieldMode" : "NULLABLE"
-			}]
-			
-		}]
-		
-	}
-	]]'/>
-			<bigquery:create-table doc:name="Create Table" doc:id="00af2b19-f757-4382-b5fa-e7a418d9bde3" config-ref="Google_BigQuery_Config" tableFields='#[%dw 2.0
-	output application/java
-	fun parseSchema(schema) =
-		schema map ( payload01 , indexOfPayload01 ) -&gt; {
-			fieldName : payload01.FieldName,
-			fieldType : payload01.FieldType,
-			fieldDescription : payload01.fieldDescription,
-			fieldMode : payload01.fieldMode,
-			fieldSubFields : parseSchema(payload01.subFields)
-		}
-	---
-	parseSchema(payload)]'>
-				<bigquery:table-info>
-					<bigquery:table table="${bigquery.table}" dataset="${bigquery.dataset}" />
-				</bigquery:table-info>
-			</bigquery:create-table>
-			
-			<set-payload value='#[[
-		{
-			"RowId": "1",
-			"Name": "AAA",
-			"EmployeeId" : "264",
-			"ContactDetails":{
-				"Address":{
-					"City": "Pune",
-					"State":"MH",
-					"Country":"India"
-				},			
-				"ContactNumber":{
-					"CountryCode":"+91",
-					"MobileNumber":11111111
-				}
-			}
-		},
-		{
-			"RowId": "2",
-			"Name": "BBB",
-			"EmployeeId" : "544",
-			"ContactDetails":{
-				"Address":{
-					"City": "Mumbai",
-					"State":"MH",
-					"Country":"India"
-				},
-				"ContactNumber":{
-					"CountryCode":"+1",
-					"MobileNumber":2222222
-				}
-			}
-		},
-		{
-			"RowId": "3",
-			"Name": "CCC",
-			"EmployeeId" : "2342",
-			"ContactDetails":{
-				"Address":{
-					"City": "Vadodara",
-					"State":"GJ",
-					"Country":"India"
-				},
-				"ContactNumber":{
-					"CountryCode":"+91",
-					"MobileNumber":333333333
-				}
-			}
-		},
-		{
-			"RowId": "4",
-			"Name": "DDD",
-			"EmployeeId" : "09823",
-			"ContactDetails":{
-				"Address":{
-					"City": "Jaipur",
-					"State":"RJ",
-					"Country":"India"
-				},
-				"ContactNumber":{
-					"CountryCode":"+1",
-					"MobileNumber":44444444
-				}
-			}
-		}
-	]]' doc:name="Set Payload" doc:id="e2910eda-f987-4b85-8cad-ee474b660b77"/>
-			<ee:transform doc:name="Transform Message" doc:id="675f7027-f893-41dc-896e-4008da78cf86" >
-				<ee:message >
-					<ee:set-payload ><![CDATA[%dw 2.0
-	output application/java
-	---
-	payload map (( payload01 , indexOfPayload01 ) -> {
-		Name: payload01.Name,
-		EmployeeId: payload01.EmployeeId,
-		ContactDetails: {
-			Address: {
-				City: payload01.ContactDetails.Address.City,
-				State: payload01.ContactDetails.Address.State,
-				Country: payload01.ContactDetails.Address.Country
-			},
-			ContactNumber: {
-				CountryCode: payload01.ContactDetails.ContactNumber.CountryCode,
-				MobileNumber: payload01.ContactDetails.ContactNumber.MobileNumber
-			}
-		},
-		RowID: payload01.RowId
-	})]]></ee:set-payload>
-				</ee:message>
-			</ee:transform>
-			<bigquery:insert-all doc:name="Insert All" doc:id="4d060baa-93f5-4192-9b7a-73faeff7a926" config-ref="Google_BigQuery_Config" rowsData="#[payload]" tableId="${bigquery.table}" datasetId="${bigquery.dataset}"/>
-			<logger level="INFO" doc:name="Logger" doc:id="232381b1-f4d1-4690-b7c0-2ccfa2a2f83f" message="#[payload]"/>
-			<flow-ref doc:name="Flow Reference" doc:id="59982ede-9c37-4630-800f-a5203d32c340" name="asynchronousQueryDataSubFlow"/>
-		</flow>
-		
-		<sub-flow name="asynchronousQueryDataSubFlow" doc:id="173d5c84-ede6-40b1-9e8c-eb6e57709779" >
-			<bigquery:create-job doc:name="Create Job" doc:id="6757a8b4-e3ad-4421-a7c1-630a88ff442a" config-ref="Google_BigQuery_Config">
-				<bigquery:job-config>
-					<bigquery:job-configuration>
-						<bigquery:query-job >
-							<bigquery:query-string >SELECT * FROM `${bigquery.projectId}.${bigquery.dataset}.${bigquery.table}` WHERE ContactDetails.Address.State in UNNEST (@param)</bigquery:query-string>
-							<bigquery:named-parameters >
-								<bigquery:named-parameter-configuration key='#["param"]' >
-									<bigquery:named-parameter arrayType="true" type="STRING" >
-										<bigquery:values >
-											<bigquery:value value="#['MH']" />
-											<bigquery:value value="#['GJ']" />
-										</bigquery:values>
-									</bigquery:named-parameter>
-								</bigquery:named-parameter-configuration>
-							</bigquery:named-parameters>
-						</bigquery:query-job>
-					</bigquery:job-configuration>
-				</bigquery:job-config>
-				<bigquery:job-info />
-			</bigquery:create-job>
-			<set-variable value="#[%dw 2.0
-	output application/java
-	---
-	payload.jobId.job]" doc:name="Set Variable" doc:id="0907f02e-c6b3-42bd-9bec-7f24383264f4" variableName="jobId"/>
-			
-			<flow-ref doc:name="Flow Reference" doc:id="6668a82c-931e-42a4-aac2-f716c31d5704" name="checkJobStatusAndQuerySubFlow"/>
-		</sub-flow>
-		
-		<sub-flow name="checkJobStatusAndQuerySubFlow" doc:id="d4dbf4e4-b29f-4f97-93b7-4588243d5f16" >
-			<bigquery:get-job doc:name="Get Job" doc:id="80dce9f6-5402-4584-a07b-f7115e0fc779" config-ref="Google_BigQuery_Config" jobName="#[vars.jobId]"/>
-			<set-variable value="#[%dw 2.0
-	output application/java
-	---
-	payload.status.state]" doc:name="Set Variable" doc:id="acd1f279-ef57-4c79-927b-10bd19b6fc3f" variableName="jobStatus"/>
-			<choice doc:name="Choice" doc:id="60d38791-731d-49ed-916f-e9f4c2e43739" >
-				<when doc:id="602adbc9-95f6-47a7-a36c-6e6b2f3e7d34" expression="#[vars.jobStatus == 'DONE']">
-					<logger level="INFO" doc:name="Logger" doc:id="a999b3bd-c637-48c3-8281-50baeca6649b" message="#[vars.jobStatus]"/>
-					<bigquery:get-query-result doc:name="Get Query Result" doc:id="71055737-7bfa-46bc-bd08-72ae0acd2806" config-ref="Google_BigQuery_Config" jobName="#[vars.jobId]"/>
-					
-					<ee:transform doc:name="Transform Message" doc:id="d2594838-e547-467d-8e3f-f8e08c2497a9" >
-						<ee:message >
-							<ee:set-payload ><![CDATA[%dw 2.0
-	output application/json
-	var schema=payload.schema.fields
-	---
-	payload.values map ((row, index) -> {
-		(schema[0].name): row[0].stringValue,
-		(schema[1].name): row[1].stringValue,
-		(schema[2].name): {
-			 (schema[2].subFields[0].name): {
-					(schema[2].subFields[0].subFields[0].name): row[2].value[0].value[0].stringValue,
-					(schema[2].subFields[0].subFields[1].name): row[2].value[0].value[1].stringValue,
-					(schema[2].subFields[0].subFields[2].name): row[2].value[0].value[2].stringValue
-			 },
-			 (schema[2].subFields[1].name): {
-					(schema[2].subFields[1].subFields[0].name): row[2].value[1].value[0].stringValue,
-					(schema[2].subFields[1].subFields[1].name): row[2].value[1].value[1].stringValue
-			 }
-		}	 
-	})]]></ee:set-payload>
-						</ee:message>
-					</ee:transform>
-					
-					<logger level="INFO" doc:name="Logger" doc:id="bc48d769-f3fa-4644-ba24-218cdc031c12" message="#[output application/json
-	---
-	payload]" />
-					
-					<bigquery:delete-table doc:name="Delete Table" doc:id="b47ffcee-0c58-4081-8425-ff72a205bfab" config-ref="Google_BigQuery_Config">
-						<bigquery:table table="${bigquery.table}" dataset="${bigquery.dataset}" />
-					</bigquery:delete-table>
-					<bigquery:delete-dataset doc:name="Delete Dataset" doc:id="c53bddb2-ae1e-4b9e-a517-344478de7012" config-ref="Google_BigQuery_Config" datasetId="${bigquery.dataset}"/>
-				</when>
-				<otherwise>
-					<logger level="INFO" doc:name="Logger" doc:id="ded8639e-e806-473c-94f2-c47bf4454371" message="#[vars.jobStatus]"/>
-					<flow-ref doc:name="Flow Reference" doc:id="ad3080a2-8335-4198-a094-e006f6fcd3ae" name="checkJobStatusAndQuerySubFlow"/>
-				</otherwise>
-			</choice>
-		</sub-flow>
-	</mule>
+        <bigquery:config name="Google_BigQuery_Config" doc:name="Google BigQuery Config" doc:id="3533061e-e19f-4a0a-a0c5-9d6721bc6e96" >
+            <bigquery:connection projectId="${bigquery.projectId}" jsonServiceAccountKeyFile="${bigquery.jsonServiceAccountKeyFile}"/>
+        </bigquery:config>
+
+        <http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="fd11a444-404a-4ef5-afee-8b917cb8a286" >
+            <http:listener-connection host="0.0.0.0" port="8081" />
+        </http:listener-config>
+
+        <flow name="insertDataFlow" doc:id="434da132-4106-4fdc-aee0-301136274032" >
+            <http:listener doc:name="Listener" doc:id="1da141b3-834f-4c92-9e7a-8f27bbf43246" config-ref="HTTP_Listener_config" path="${bigquery.httpListener.path}"/>
+
+            <bigquery:create-dataset doc:name="Create Dataset" doc:id="1046e0f1-a885-4154-9c27-e9550ce8a31a" config-ref="Google_BigQuery_Config" datasetName="${bigquery.dataset}"/>
+
+            <set-payload doc:name="Set Payload" doc:id="ead5e87c-9dff-4404-9f0d-19ddd28d686a" value='#[[{
+        "FieldName" : "Name",
+        "FieldType" : "STRING",
+        "fieldDescription" : "this is name",
+        "fieldMode" : "NULLABLE"
+        },
+    {
+        "FieldName" : "EmployeeID",
+        "FieldType" : "STRING",
+        "fieldDescription" : "this is employeeId",
+        "fieldMode" : "NULLABLE"
+    },
+    {
+        "FieldName" : "ContactDetails",
+        "FieldType" : "RECORD",
+        "fieldDescription" : "this is contact details",
+        "fieldMode" : "NULLABLE",
+
+        "subFields" : [{
+            "FieldName" : "Address",
+            "FieldType" : "RECORD",
+            "fieldDescription" : "this is address",
+            "fieldMode" : "NULLABLE",
+            "subFields" : [{
+                "FieldName" : "City",
+                "FieldType" : "STRING",
+                "fieldDescription" : "this is city",
+                "fieldMode" : "NULLABLE"
+            },
+            {
+                "FieldName" : "State",
+                "FieldType" : "STRING",
+                "fieldDescription" : "this is state",
+                "fieldMode" : "NULLABLE"
+            },
+            {
+                "FieldName" : "Country",
+                "FieldType" : "STRING",
+                "fieldDescription" : "this is country",
+                "fieldMode" : "NULLABLE"
+            }]
+        },
+        {
+            "FieldName" : "ContactNumber",
+            "FieldType" : "RECORD",
+            "fieldDescription" : "this is contact number",
+            "fieldMode" : "NULLABLE",
+
+            "subFields" : [{
+                "FieldName" : "CountryCode",
+                "FieldType" : "STRING",
+                "fieldDescription" : "this is CountryCode",
+                "fieldMode" : "NULLABLE"
+            },
+            {
+                "FieldName" : "MobileNumber",
+                "FieldType" : "INTEGER",
+                "fieldDescription" : "this is MobileNumber",
+                "fieldMode" : "NULLABLE"
+            }]
+
+        }]
+
+    }
+    ]]'/>
+            <bigquery:create-table doc:name="Create Table" doc:id="00af2b19-f757-4382-b5fa-e7a418d9bde3" config-ref="Google_BigQuery_Config" tableFields='#[%dw 2.0
+    output application/java
+    fun parseSchema(schema) =
+        schema map ( payload01 , indexOfPayload01 ) -&gt; {
+            fieldName : payload01.FieldName,
+            fieldType : payload01.FieldType,
+            fieldDescription : payload01.fieldDescription,
+            fieldMode : payload01.fieldMode,
+            fieldSubFields : parseSchema(payload01.subFields)
+        }
+    ---
+    parseSchema(payload)]'>
+                <bigquery:table-info>
+                    <bigquery:table table="${bigquery.table}" dataset="${bigquery.dataset}" />
+                </bigquery:table-info>
+            </bigquery:create-table>
+
+            <set-payload value='#[[
+        {
+            "RowId": "1",
+            "Name": "AAA",
+            "EmployeeId" : "264",
+            "ContactDetails":{
+                "Address":{
+                    "City": "Pune",
+                    "State":"MH",
+                    "Country":"India"
+                },
+                "ContactNumber":{
+                    "CountryCode":"+91",
+                    "MobileNumber":11111111
+                }
+            }
+        },
+        {
+            "RowId": "2",
+            "Name": "BBB",
+            "EmployeeId" : "544",
+            "ContactDetails":{
+                "Address":{
+                    "City": "Mumbai",
+                    "State":"MH",
+                    "Country":"India"
+                },
+                "ContactNumber":{
+                    "CountryCode":"+1",
+                    "MobileNumber":2222222
+                }
+            }
+        },
+        {
+            "RowId": "3",
+            "Name": "CCC",
+            "EmployeeId" : "2342",
+            "ContactDetails":{
+                "Address":{
+                    "City": "Vadodara",
+                    "State":"GJ",
+                    "Country":"India"
+                },
+                "ContactNumber":{
+                    "CountryCode":"+91",
+                    "MobileNumber":333333333
+                }
+            }
+        },
+        {
+            "RowId": "4",
+            "Name": "DDD",
+            "EmployeeId" : "09823",
+            "ContactDetails":{
+                "Address":{
+                    "City": "Jaipur",
+                    "State":"RJ",
+                    "Country":"India"
+                },
+                "ContactNumber":{
+                    "CountryCode":"+1",
+                    "MobileNumber":44444444
+                }
+            }
+        }
+    ]]' doc:name="Set Payload" doc:id="e2910eda-f987-4b85-8cad-ee474b660b77"/>
+            <ee:transform doc:name="Transform Message" doc:id="675f7027-f893-41dc-896e-4008da78cf86" >
+                <ee:message >
+                    <ee:set-payload ><![CDATA[%dw 2.0
+    output application/java
+    ---
+    payload map (( payload01 , indexOfPayload01 ) -> {
+        Name: payload01.Name,
+        EmployeeId: payload01.EmployeeId,
+        ContactDetails: {
+            Address: {
+                City: payload01.ContactDetails.Address.City,
+                State: payload01.ContactDetails.Address.State,
+                Country: payload01.ContactDetails.Address.Country
+            },
+            ContactNumber: {
+                CountryCode: payload01.ContactDetails.ContactNumber.CountryCode,
+                MobileNumber: payload01.ContactDetails.ContactNumber.MobileNumber
+            }
+        },
+        RowID: payload01.RowId
+    })]]></ee:set-payload>
+                </ee:message>
+            </ee:transform>
+            <bigquery:insert-all doc:name="Insert All" doc:id="4d060baa-93f5-4192-9b7a-73faeff7a926" config-ref="Google_BigQuery_Config" rowsData="#[payload]" tableId="${bigquery.table}" datasetId="${bigquery.dataset}"/>
+            <logger level="INFO" doc:name="Logger" doc:id="232381b1-f4d1-4690-b7c0-2ccfa2a2f83f" message="#[payload]"/>
+            <flow-ref doc:name="Flow Reference" doc:id="59982ede-9c37-4630-800f-a5203d32c340" name="asynchronousQueryDataSubFlow"/>
+        </flow>
+
+        <sub-flow name="asynchronousQueryDataSubFlow" doc:id="173d5c84-ede6-40b1-9e8c-eb6e57709779" >
+            <bigquery:create-job doc:name="Create Job" doc:id="6757a8b4-e3ad-4421-a7c1-630a88ff442a" config-ref="Google_BigQuery_Config">
+                <bigquery:job-config >
+                    <bigquery:query-job >
+                        <bigquery:query-string >SELECT * FROM `${bigquery.projectId}.${bigquery.dataset}.${bigquery.table}` WHERE ContactDetails.Address.State in UNNEST (@param)</bigquery:query-string>
+                        <bigquery:named-parameters >
+                            <bigquery:named-parameter-configuration key='#["param"]' >
+                                <bigquery:named-parameter arrayType="true" type="STRING" >
+                                    <bigquery:values >
+                                        <bigquery:value value="#['MH']" />
+                                        <bigquery:value value="#['GJ']" />
+                                    </bigquery:values>
+                                </bigquery:named-parameter>
+                            </bigquery:named-parameter-configuration>
+                        </bigquery:named-parameters>
+                    </bigquery:query-job>
+                </bigquery:job-config>
+                <bigquery:job-info />
+            </bigquery:create-job>
+            <set-variable value="#[%dw 2.0
+    output application/java
+    ---
+    payload.jobId.job]" doc:name="Set Variable" doc:id="0907f02e-c6b3-42bd-9bec-7f24383264f4" variableName="jobId"/>
+
+            <flow-ref doc:name="Flow Reference" doc:id="6668a82c-931e-42a4-aac2-f716c31d5704" name="checkJobStatusAndQuerySubFlow"/>
+        </sub-flow>
+
+        <sub-flow name="checkJobStatusAndQuerySubFlow" doc:id="d4dbf4e4-b29f-4f97-93b7-4588243d5f16" >
+            <bigquery:get-job doc:name="Get Job" doc:id="80dce9f6-5402-4584-a07b-f7115e0fc779" config-ref="Google_BigQuery_Config" jobName="#[vars.jobId]"/>
+            <set-variable value="#[%dw 2.0
+    output application/java
+    ---
+    payload.status.state.constant as String]" doc:name="Set Variable" doc:id="acd1f279-ef57-4c79-927b-10bd19b6fc3f" variableName="jobStatus"/>
+            <choice doc:name="Choice" doc:id="60d38791-731d-49ed-916f-e9f4c2e43739" >
+                <when doc:id="602adbc9-95f6-47a7-a36c-6e6b2f3e7d34" expression="#[vars.jobStatus == 'DONE']">
+                    <logger level="INFO" doc:name="Logger" doc:id="a999b3bd-c637-48c3-8281-50baeca6649b" message="#[vars.jobStatus]"/>
+                    <bigquery:get-query-result doc:name="Get Query Result" doc:id="71055737-7bfa-46bc-bd08-72ae0acd2806" config-ref="Google_BigQuery_Config" jobName="#[vars.jobId]"/>
+
+                    <ee:transform doc:name="Transform Message" doc:id="d2594838-e547-467d-8e3f-f8e08c2497a9" >
+                        <ee:message >
+                            <ee:set-payload ><![CDATA[%dw 2.0
+    output application/json
+    var schema=payload.schema.fields
+    ---
+    payload.values map ((row, index) -> {
+        (schema[0].name): row[0].stringValue,
+        (schema[1].name): row[1].stringValue,
+        (schema[2].name): {
+             (schema[2].subFields[0].name): {
+                    (schema[2].subFields[0].subFields[0].name): row[2].value[0].value[0].stringValue,
+                    (schema[2].subFields[0].subFields[1].name): row[2].value[0].value[1].stringValue,
+                    (schema[2].subFields[0].subFields[2].name): row[2].value[0].value[2].stringValue
+             },
+             (schema[2].subFields[1].name): {
+                    (schema[2].subFields[1].subFields[0].name): row[2].value[1].value[0].stringValue,
+                    (schema[2].subFields[1].subFields[1].name): row[2].value[1].value[1].stringValue
+             }
+        }
+    })]]></ee:set-payload>
+                        </ee:message>
+                    </ee:transform>
+
+                    <logger level="INFO" doc:name="Logger" doc:id="bc48d769-f3fa-4644-ba24-218cdc031c12" message="#[output application/json
+    ---
+    payload]" />
+
+                    <bigquery:delete-table doc:name="Delete Table" doc:id="b47ffcee-0c58-4081-8425-ff72a205bfab" config-ref="Google_BigQuery_Config">
+                        <bigquery:table table="${bigquery.table}" dataset="${bigquery.dataset}" />
+                    </bigquery:delete-table>
+                    <bigquery:delete-dataset doc:name="Delete Dataset" doc:id="c53bddb2-ae1e-4b9e-a517-344478de7012" config-ref="Google_BigQuery_Config" datasetId="${bigquery.dataset}"/>
+                </when>
+                <otherwise>
+                    <logger level="INFO" doc:name="Logger" doc:id="ded8639e-e806-473c-94f2-c47bf4454371" message="#[vars.jobStatus]"/>
+                    <flow-ref doc:name="Flow Reference" doc:id="ad3080a2-8335-4198-a094-e006f6fcd3ae" name="checkJobStatusAndQuerySubFlow"/>
+                </otherwise>
+            </choice>
+        </sub-flow>
+    </mule>
 
 Resources
 ---------
 
 -   [BiqQuery Connector Release Notes](bq_release_notes.html).
 
--   [BiqQuery Connector API docs - Version 2.1.0](bq_v2.1_api_reference.html).
+-   [BiqQuery Connector API docs - Version 1.0.0](bq_v1_api_reference.html).
 
 {% include links.html %}
