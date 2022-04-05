@@ -10,12 +10,12 @@ Elasticsearch from mule flows. The connector exposes convenient methods
 for exploiting the capabilities of Elasticsearch.
 
 The connector executes API calls targeting Elasticsearch’s REST API
-depending on you configuration. The API calls use an JSON
+depending on your configuration. The API calls use an JSON
 request/response over HTTP and HTTPS connection.
 
 Read through this user guide to understand how to set up and configure a
 basic flow using the connector. Track feature additions, compatibility,
-limitations, and API version updates using the Docker Connector Release
+limitations, and API version updates using the Elasticsearch Connector Release
 Notes. Review the connector operations and see how they work by
 reviewing the Technical Reference alongside the Demo Applications.
 

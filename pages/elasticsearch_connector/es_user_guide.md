@@ -107,9 +107,9 @@ Creating a New Project
 To use the Elasticsearch connector in a Mule application project:
 
 1.  In Anypoint Studio, click **File \> New \> Project**![Create New
-    Project](./images/mulesoft/elasticsearch-connector/create-new-project.png)Select Mule
-    project from the dialog box![Mule
-    Project](./images/mulesoft/elasticsearch-connector/select-mule-project.png)
+    Project](./images/mulesoft/elasticsearch-connector/create-new-project.png)
+    <br>
+    Select Mule project from the dialog box.
 
 2.  Enter a name for your new project and leave the remaining options
     with their default values ![Create new project dialogue
@@ -126,7 +126,9 @@ a global Elasticsearch element that is used by the Elasticsearch
 connector. The Elasticsearch connector provides the following global
 configuration(s).
 
-![Elasticsearch-connector-config](./images/mulesoft/elasticsearch-connector/Elasticsearch-connector-configuration.png)
+![Elasticsearch-connector-config](./images/mulesoft/elasticsearch-connector/Elasticsearch-connector-configuration-1.png)
+
+![Elasticsearch-connector-config](./images/mulesoft/elasticsearch-connector/Elasticsearch-connector-configuration-2.png)
 
 Authentication
 --------------
@@ -139,7 +141,7 @@ In NO AUTHENTICATION, you need to provide your Elasticsearch host and
 port in a global configuration. NO AUTHENTICATION is generally
 recommended for quick testing.For installation and starting
 Elasticsearch, refer
-[Installation](<literal>https://www.elastic.co/guide/en/elasticsearch/reference/current/_installation.html</literal>).
+[Installation](https://www.elastic.co/guide/en/elasticsearch/reference/current/_installation.html).
 
 Following parameters are required for **HTTP** configuration:
 
@@ -188,7 +190,7 @@ extra steps, but ìs preferred if your Elasticsearch is exposed to
 external users, as it ensures better security.To make the Elasticsearch
 run on HTTPS, generate server and client certificates on Elasticsearch
 host using X-pack. Please refer [Encrypting communications in
-Elasticseach](<literal>https://www.elastic.co/guide/en/elasticsearch/reference/current/configuring-tls.html#node-certificates</literal>)
+Elasticseach](https://www.elastic.co/guide/en/elasticsearch/reference/current/configuring-tls.html#node-certificates)
 for detailed information about running Elasticsearch on HTTPS and
 generating required certificates.
 
@@ -244,7 +246,7 @@ generating required certificates.
 > **Note**
 >
 > Access
-> [X-Pack](<literal>https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-xpack.html</literal>)
+> [X-Pack](https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-xpack.html)
 > for detailed information to provide security and many other
 > capabilities. By default, when you install Elasticsearch, X-Pack is
 > also installed.
@@ -306,11 +308,10 @@ document :
     }
 
 ### 	  1.Elasticsearch as a Document Store {#use-case-1}
----------------------------------
 
 -   We will use the readily available dataset that can be found at [the
     complete works of William
-    Shakespeare](<literal>https://www.elastic.co/guide/en/kibana/current/tutorial-load-dataset.html</literal>)
+    Shakespeare](https://www.elastic.co/guide/en/kibana/current/tutorial-load-dataset.html)
     and the Bulk operation of Elasticsearch connector for the usecase
 
     -   In Anypoint Studio, click **File \> New \> Mule Project**, name
@@ -379,7 +380,7 @@ described above.
 ### 	2.Search for the phrases from particular dataset {#use-case-2}
 
 -   To visually analyze the datasets, user can also use of
-    [Kibana](<literal>https://www.elastic.co/guide/en/kibana/6.2/index.html</literal>)
+    [Kibana](https://www.elastic.co/guide/en/kibana/6.2/index.html)
 
 -   Elasticsearch is preferred when you’re doing a lot of text search,
     where traditional RDBMS databases are not performing really well
