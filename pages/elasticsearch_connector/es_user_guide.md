@@ -109,7 +109,9 @@ To use the Elasticsearch connector in a Mule application project:
 1.  In Anypoint Studio, click **File \> New \> Project**![Create New
     Project](./images/mulesoft/elasticsearch-connector/create-new-project.png)
     <br>
-    Select Mule project from the dialog box.
+    Select Mule project from the dialog box. 
+    
+    ![Mule Project](./images/mulesoft/elasticsearch-connector/select-mule-project.png)
 
 2.  Enter a name for your new project and leave the remaining options
     with their default values ![Create new project dialogue
@@ -126,9 +128,7 @@ a global Elasticsearch element that is used by the Elasticsearch
 connector. The Elasticsearch connector provides the following global
 configuration(s).
 
-![Elasticsearch-connector-config](./images/mulesoft/elasticsearch-connector/Elasticsearch-connector-configuration-1.png)
-
-![Elasticsearch-connector-config](./images/mulesoft/elasticsearch-connector/Elasticsearch-connector-configuration-2.png)
+![Elasticsearch-connector-config](./images/mulesoft/elasticsearch-connector/Elasticsearch-connector-configuration.png)
 
 Authentication
 --------------
@@ -347,7 +347,7 @@ document :
 
     -   After you create the flow, right-click the project and click
         **Run As \> Mule Applciation**
-        ![Documentstore-flow](./images/mulesoft/elasticsearch-connector/documentstore.png)
+        ![Documentstore-flow](./images/mulesoft/elasticsearch-connector/usecase-1.png)
 
 **Example Use Case Code :**
 
@@ -434,7 +434,7 @@ described above.
     -   After you create the flow, right-click the project and click
         **Run As \> Mule Applciation**
 
-![search-flow](./images/mulesoft/elasticsearch-connector/search.png)
+![search-flow](./images/mulesoft/elasticsearch-connector/usecase-2.png)
 
 **Example Use Case Code :**
 
